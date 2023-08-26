@@ -52,14 +52,25 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
       <div>
         <video
           autoplay
+          muted
           loop
-          controls
           aria-label='Video demonstrating age calculator component'
         >
           <source
             src={new URL('age-calculator-sm.webm', Astro.url).toString()}
             type='video/webm'
           />
+          <source
+            src={new URL('age-calculator-sm.mp4', Astro.url).toString()}
+            type='video/mp4'
+          />
+          <p>
+            Your browser doesn't support HTML5 video. Here is a
+            <a
+              href={new URL('age-calculator-sm.mp4', Astro.url).toString()}
+              aria-label='Link to age calculator video'>link to the video</a
+            >instead.
+          </p>
         </video>
         <p>
           <a
