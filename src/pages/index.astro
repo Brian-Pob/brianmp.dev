@@ -9,6 +9,19 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 <html lang='en'>
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      video {
+        margin: 0 auto;
+        border: 5px solid;
+        border-radius: 3px;
+        border-color: hsl(151deg 79% 73%);
+      }
+
+      :has(> video) {
+        width: 100%;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <Header title={SITE_TITLE} />
@@ -36,21 +49,26 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         from Frontend Mentor built with SolidJS plus a bunch of other frameworks
         and tools. Here's a preview.
       </p>
-
-      <img
-        src='https://github.com/Brian-Pob/frontend-mentor/blob/production/public/images/ChallengeImages/age-calculator.gif?raw=true'
-        alt='GIF of age calculator'
-        id='age-calculator'
-      />
-      <p>
-        <a
-          href='https://solid-mentor.netlify.app/challenges/agecalculator'
-          aria-label='Link to age calculator challenge'
+      <div>
+        <video
+          autoplay
+          loop
+          controls
+          aria-label='Video demonstrating age calculator component'
         >
-          Age Calculator
-        </a>
-        challenge done with SCSS and the View Transitions API
-      </p>
+          <source
+            src={new URL('age-calculator-sm.webm', Astro.url).toString()}
+            type='video/webm'
+          />
+        </video>
+        <p>
+          <a
+            href='https://solid-mentor.netlify.app/challenges/agecalculator'
+            aria-label='Link to age calculator challenge'
+            >Age Calculator
+          </a>challenge done with SCSS and the View Transitions API.
+        </p>
+      </div>
     </main>
     <Footer />
   </body>
