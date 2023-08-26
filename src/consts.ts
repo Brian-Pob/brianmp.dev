@@ -2,4 +2,5 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 export const SITE_TITLE = 'Brian Poblete';
-export const SITE_DESCRIPTION = 'UX Designer, Web Developer, Software Engineer';
+export const SITE_DESCRIPTION =
+  'Tallahasse based UX Designer, Web Developer, and Software Engineer.';
