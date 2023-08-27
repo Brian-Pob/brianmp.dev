@@ -20,13 +20,13 @@ import SocialLinks from './SocialLinks.astro';
 <style>
   header {
     margin: 0;
-    padding: 0 1em;
+    padding: 0 1rem;
     background: white;
     box-shadow: 0 2px 8px rgba(var(--black), 5%);
   }
   h2 {
     margin: 0;
-    font-size: 1em;
+    font-size: 1rem;
   }
 
   h2 a,
@@ -38,8 +38,26 @@ import SocialLinks from './SocialLinks.astro';
     align-items: center;
     justify-content: space-between;
   }
+
+  /* Width for folded Galaxy Fold */
+  @media (max-width: 350px) {
+    nav {
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    nav > div {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    h2 {
+      margin-top: 1rem;
+    }
+  }
   nav a {
-    padding: 1em 0.5em;
+    padding: 1rem 0.5rem;
     color: var(--black);
     border-bottom: 4px solid transparent;
     text-decoration: none;

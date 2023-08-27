@@ -39,15 +39,32 @@ body {
   word-wrap: break-word;
   overflow-wrap: break-word;
   color: rgb(var(--gray-dark));
-  font-size: 20px;
+  font-size: 1.125rem;
   line-height: 1.7;
 }
 main {
   width: 720px;
-  max-width: calc(100% - 2em);
+  max-width: calc(100% - 2rem);
   margin: auto;
-  padding: 3em 1em;
+  padding: 3rem 1rem;
 }
+
+h1 {
+  font-size: 3.052rem;
+}
+h2 {
+  font-size: 2.441rem;
+}
+h3 {
+  font-size: 1.953rem;
+}
+h4 {
+  font-size: 1.563rem;
+}
+h5 {
+  font-size: 1.25rem;
+}
+
 h1,
 h2,
 h3,
@@ -57,22 +74,9 @@ h6 {
   margin: 0 0 0.5rem 0;
   color: rgb(var(--black));
   line-height: 1.2;
+  /* font-size: min(inherit, 2.441em); */
 }
-h1 {
-  font-size: 3.052em;
-}
-h2 {
-  font-size: 2.441em;
-}
-h3 {
-  font-size: 1.953em;
-}
-h4 {
-  font-size: 1.563em;
-}
-h5 {
-  font-size: 1.25em;
-}
+
 strong,
 b {
   font-weight: 700;
@@ -84,10 +88,10 @@ a:hover {
   color: var(--accent);
 }
 p {
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
 }
 .prose p {
-  margin-bottom: 2em;
+  margin-bottom: 2rem;
 }
 textarea {
   width: 100%;
@@ -110,7 +114,7 @@ code {
   border-radius: 2px;
 }
 pre {
-  padding: 1.5em;
+  padding: 1.5rem;
   border-radius: 8px;
 }
 pre > code {
@@ -120,7 +124,7 @@ blockquote {
   border-left: 4px solid var(--accent);
   padding: 0 0 0 20px;
   margin: 0px;
-  font-size: 1.333em;
+  font-size: 1.333rem;
 }
 hr {
   border: none;
@@ -128,10 +132,10 @@ hr {
 }
 @media (max-width: 720px) {
   body {
-    font-size: 18px;
+    font-size: 1.125rem;
   }
   main {
-    padding: 1em;
+    padding: 1rem;
   }
 }
 
