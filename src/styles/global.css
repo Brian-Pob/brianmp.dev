@@ -17,14 +17,14 @@
 }
 @font-face {
   font-family: 'Atkinson';
-  src: url('/fonts/atkinson-regular.woff') format('woff');
+  src: url('/fonts/atkinson-regular.woff') format('woff'), format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Atkinson';
-  src: url('/fonts/atkinson-bold.woff') format('woff');
+  font-family: 'Space Grotesk';
+  src: url('/fonts/space-grotesk.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -71,6 +71,7 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: 'Space Grotesk', sans-serif;
   margin: 0 0 0.5rem 0;
   color: rgb(var(--black));
   line-height: 1.2;
