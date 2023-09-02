@@ -1,12 +1,13 @@
 ---
 import Layout from '../layouts/BlogPost.astro';
+import ipadImg from '../assets/ipad-wireframe.png';
 ---
 
 <Layout
   title='About Brian'
   description={`I am a web developer and UX designer. Click to read more about me.`}
   pubDate={new Date('August 26 2023')}
-  heroImage='/blog-placeholder-about.jpg'
+  heroImage={{ ...ipadImg, width: 1020, height: 510 }}
 >
   <p>
     I am a web developer with a bachelor's degree in computer science and I am
