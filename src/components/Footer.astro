@@ -21,7 +21,34 @@ const today = new Date();
       >
     </p>
   </a>
+  <address>
+    <a href='mailto:brianmp.dev@gmail.com'>brianmp.dev@gmail.com</a>
+    <br />
+    <button class='tel'>{`[Click to reveal and copy cel no.]`}</button>
+  </address>
 </footer>
+
+<script is:inline>
+const phoneBtn = document.querySelector('button.tel');
+
+const revealPhone = () => {
+  const phone = '+1-850-570-9189';
+  const phoneLink = document.createElement('a');
+  phoneLink.textContent = phone;
+  phoneLink.href = `tel:${phone}`;
+  phoneBtn.replaceWith(phoneLink);
+
+  const copiedText = `<br><span class='copied-text'>Copied to clipboard.</span>`;
+
+  document
+    .querySelector('address')
+    .insertAdjacentHTML('beforeend', copiedText);
+
+  navigator.clipboard.writeText(phone);
+};
+
+phoneBtn.addEventListener('click', revealPhone);
+</script>
 
 <style>
   footer {
@@ -48,6 +75,21 @@ const today = new Date();
   a:hover * {
     fill: var(--accent);
   }
+
+  address button {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-style: normal;
+    text-decoration: underline;
+  }
+
+  address a {
+    color: black;
+    text-decoration: underline;
+    font-style: normal;
+  }
+
   svg {
     margin-top: 0.5rem;
     height: 1rem;
