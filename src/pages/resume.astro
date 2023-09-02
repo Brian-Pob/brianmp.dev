@@ -1,0 +1,51 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <BaseHead
+      title={`Brian Poblete - Web Dev and UX Design Resume`}
+      description={`1.5+ years experience with React. 3+ years experience with HTML5, CSS3, and JavaScript. 2+ years experience with UI/UX Design.`}
+    />
+    <style>
+      img {
+        display: block;
+        margin: 0 auto;
+      }
+      blockquote {
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1>Brian Poblete - Web Development and UX Design Resume</h1>
+      <p>
+        Uhhh... This page is a work in progress. In the meantime, check out my <a
+          href='https://linkedin.com/in/Brian-Pob/'>LinkedIn</a
+        >.
+      </p>
+      <Image
+        src='https://media.tenor.com/D1Ws8C4pZQAAAAAC/spongebob-patrick.gif'
+        alt='Patrick with board in head'
+        width={500}
+        height={500}
+      />
+      <blockquote>
+        The inner machinations of my mind are an enigma.
+        <footer>
+          &mdash; Patrick Star,
+          <cite>SpongeBob Squarepants</cite>
+        </footer>
+      </blockquote>
+      <p><i>His name's not Rick.</i></p>
+    </main>
+    <Footer />
+  </body>
+</html>
