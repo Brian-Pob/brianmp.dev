@@ -8,12 +8,13 @@ import { Image } from 'astro:assets';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, extra } =
+  Astro.props;
 ---
 
 <html lang='en'>
   <head>
-    <BaseHead title={title} description={description} />
+    <BaseHead title={title} description={description} extra={extra} />
     <style>
       main {
         width: calc(100% - 2em);

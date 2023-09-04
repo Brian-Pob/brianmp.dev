@@ -3,4 +3,4 @@
 
 export const SITE_TITLE = 'Brian Poblete';
 export const SITE_DESCRIPTION =
-  'Tallahasse based UX Designer, Web Developer, and Software Engineer.';
+  "Hi there! I'm a Tallahasse based UX Designer and Software Engineer. I'm passionately building and desiging for the web. Come get to know me!";
