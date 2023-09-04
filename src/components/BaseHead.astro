@@ -60,15 +60,9 @@ const {
 <meta name='title' content={title} />
 <meta name='description' content={description} />
 
-<!-- Open Graph / Facebook -->
-<meta property='og:type' content={contentType} />
-<meta property='og:url' content={Astro.url} />
-<meta property='og:title' content={title} />
-<meta property='og:description' content={description} />
-<meta property='og:image' content={new URL(image, Astro.url)} />
-
 <!-- Extra OG Tags -->
 {
+  // Placing this above the main OG tags in case overrides are needed
   extra.map(({ property, content, isName = false }) => (
     <meta
       property={isName ? undefined : property}
@@ -77,6 +71,24 @@ const {
     />
   ))
 }
+
+{
+  // If any OG tag is property article:author, add a link to the author's profile
+  extra.some(({ property }) => property === 'article:author') && (
+    <>
+      <link rel='author' href='https://github.com/Brian-Pob' />
+      <meta property='article:author' content='https://github.com/Brian-Pob' />
+    </>
+  )
+}
+
+<!-- Open Graph / Facebook -->
+<meta property='og:type' content={contentType} />
+<meta property='og:url' content={Astro.url} />
+<meta property='og:title' content={title} />
+<meta property='og:description' content={description} />
+<meta property='og:image' content={new URL(image, Astro.url)} />
+<meta property='og:site_name' content='brianmp.dev' />
 
 <!-- Twitter -->
 <meta name='twitter:card' content='summary_large_image' />
