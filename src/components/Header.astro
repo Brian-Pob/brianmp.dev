@@ -8,10 +8,12 @@ import SocialLinks from './SocialLinks.astro';
   <nav>
     <h2><a href='/'>{SITE_TITLE}</a></h2>
     <div class='internal-links'>
-      <HeaderLink href='/'>Home</HeaderLink>
-      <HeaderLink href='/blog'>Blog</HeaderLink>
-      <HeaderLink href='/resume'>Resume</HeaderLink>
-      <HeaderLink href='/about'>About</HeaderLink>
+      <ul class='style-none'>
+        <li><HeaderLink href='/'>Home</HeaderLink></li>
+        <li><HeaderLink href='/blog'>Blog</HeaderLink></li>
+        <li><HeaderLink href='/resume'>Resume</HeaderLink></li>
+        <li><HeaderLink href='/about'>About</HeaderLink></li>
+      </ul>
     </div>
     <div class='social-links'>
       <SocialLinks />
@@ -41,7 +43,7 @@ import SocialLinks from './SocialLinks.astro';
   }
 
   /* Width for folded Galaxy Fold */
-  @media (max-width: 350px) {
+  @media (max-width: 375px) {
     nav {
       flex-direction: column;
       justify-content: center;
@@ -75,5 +77,11 @@ import SocialLinks from './SocialLinks.astro';
     .social-links {
       display: none;
     }
+  }
+
+  ul {
+    display: flex;
+    gap: 1rem;
+    overflow-x: scroll;
   }
 </style>
