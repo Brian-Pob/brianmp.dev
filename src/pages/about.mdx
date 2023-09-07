@@ -1,0 +1,47 @@
+import Layout from '../layouts/BlogPost.astro';
+import ipadImg from '../assets/ipad-wireframe.png';
+
+<Layout
+  title='About Me'
+  description={`Hi there! I'm Brian. I am a web developer and UX designer based in Tallahassee, FL. Click to learn more about me!`}
+  pubDate={new Date('September 7 2023')}
+  heroImage={{ ...ipadImg, width: 1020, height: 510 }}
+  extra={[
+    { property: 'article:published_time', content: '2023-08-26' },
+    { property: 'article:modified_time', content: '2023-08-26'}
+  ]}
+>
+
+I am a **web developer** with a bachelor's degree in computer science and I am
+currently pursuing my master's in computer science. I specialize in **front
+end development** and I have a rich background in **UX/UI Research and Design**.
+
+{' '}
+
+Currently I build and update **React components** for brands like The Gap and
+Lululemon by making their components adhere to web accessibility guidelines
+**(ADA compliance)**. While I only recently started learning and implementing
+accessibility (often abbreviated as _a11y_), it has quickly become my main focus as a developer and
+designer.
+
+{' '}
+
+Right now I am conducting user research and source code evaluation for the
+Florida Department of Transportation on behalf of Florida State University as
+a graduate research assistant. Excellent verbal and written communication is
+essential for this role and my professor, Ms. Sonia Haiduc Ph.D., can attest
+to my skills. I am great at **collaborating** with my team to get work done while
+also being comfortable working individually.
+
+{' '}
+
+My friends and family with special needs have inspired me to make
+**accessibility** the focus of my career. I am constantly teaching myself about
+best practices in accessibility. In both my work as a frontend developer as
+well as my research with FSU, I ensure that accessibility is a primary
+consideration and not an afterthought.
+
+I am a self-motivated individual with a passion for programming and design.
+I am a quick learner and readily take on any challenge presented to me.
+
+</Layout>
