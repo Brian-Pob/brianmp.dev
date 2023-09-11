@@ -3,7 +3,7 @@ import SocialLinks from './SocialLinks.astro';
 const today = new Date();
 ---
 
-<footer>
+<footer transition:persist>
   &copy; {today.getFullYear()} Brian Poblete. All rights reserved.
   <div class='social-links'>
     <SocialLinks />
@@ -28,30 +28,34 @@ const today = new Date();
   <address>
     <a href='mailto:brianmp.dev@gmail.com'>brianmp.dev@gmail.com</a>
     <br />
-    <button class='tel'>{`[Click to reveal and copy cel no.]`}</button>
+    <button class='tel'>{`[Click to reveal cel no.]`}</button>
   </address>
 </footer>
 
 <script is:inline>
-const phoneBtn = document.querySelector('button.tel');
+try {
+  const phoneBtn = document.querySelector('button.tel');
 
-const revealPhone = () => {
-  const phone = '+1-850-570-9189';
-  const phoneLink = document.createElement('a');
-  phoneLink.textContent = phone;
-  phoneLink.href = `tel:${phone}`;
-  phoneBtn.replaceWith(phoneLink);
+  const revealPhone = () => {
+    const phone = '+1-850-570-9189';
+    const phoneLink = document.createElement('a');
+    phoneLink.textContent = phone;
+    phoneLink.href = `tel:${phone}`;
+    phoneBtn.replaceWith(phoneLink);
 
-  const copiedText = `<br><span class='copied-text'>Copied to clipboard.</span>`;
+    // const copiedText = `<br><span class='copied-text'>Copied to clipboard.</span>`;
 
-  document
-    .querySelector('address')
-    .insertAdjacentHTML('beforeend', copiedText);
+    // document
+    //   .querySelector('address')
+    //   .insertAdjacentHTML('beforeend', copiedText);
 
-  navigator.clipboard.writeText(phone);
-};
+    navigator.clipboard.writeText(phone);
+  };
 
-phoneBtn.addEventListener('click', revealPhone);
+  phoneBtn.addEventListener('click', revealPhone);
+} catch (err) {
+  // console.error(err);
+}
 </script>
 
 <style>
