@@ -32,170 +32,204 @@ import { Image } from 'astro:assets';
   <body>
     <Header />
     <main>
-      <h1 id='brian-poblete'>Brian Poblete Resume</h1>
-      <!-- Click to download pdf resume -->
-      <a href='/BrianPoblete_resume.pdf' download>
-        <Image
+      <section>
+        <h1 id='brian-poblete'>Brian Poblete Resume</h1>
+        <!-- Click to download pdf resume -->
+        <p>
+          I am a software engineer with a background in Web Development and User
+          Experience. I build beautiful and usable user-interfaces that increase
+          conversion rates while adhering to accessibility standards for ADA
+          Compliance. Currently working with React and TypeScript.
+        </p>
+        <a href='/BrianPoblete_resume.pdf' download>
+          <!-- <Image
           src='/resume.png'
           alt='Brian Poblete - Resume Download'
           width='500'
           height='647'
           class='resume-img'
-        />
-        <p>Click to download resume</p>
-      </a>
-      <p>
+        /> -->
+          <p>Click to download resume</p>
+        </a>
+        <!-- <p>
         <strong>Frontend Developer</strong><br />Email: brianmp.dev@gmail.com | <a
           href='https://www.linkedin.com/in/brian-pob'>LinkedIn</a
         > | <a href='https://github.com/Brian-Pob'>GitHub</a>
-      </p>
-      <h2 id='skills'>Skills</h2>
-      <ul>
-        <li>
-          <strong>Languages:</strong> HTML, CSS, JavaScript, TypeScript,
-          SASS/SCSS, PHP
-        </li>
-        <li>
-          <strong>Frameworks:</strong> React, NodeJS, SolidJS, Astro, Tailwind
-        </li>
-        <li>
-          <strong>Developer Tools:</strong> Git, CI/CD, Docker, WordPress,
-          Drupal
-        </li>
-        <li>
-          <strong>Other:</strong> REST APIs, Web Accessibility, ARIA, UX Design,
-          Figma, SQL
-        </li>
-      </ul>
-      <h2 id='personal-projects'>Personal Projects</h2>
-      <h3 id='frontend-mentor-challenges'>Frontend Mentor Challenges</h3>
-      <ul>
-        <li><strong>Technologies:</strong> TypeScript, SCSS, SolidJS, Vite</li>
-        <li>
-          Building components and webpages with SolidJS, SCSS, and other modern
-          web development tools to practice my frontend skills.
-        </li>
-        <li>
-          Followed designs crafted by Frontend Mentor and built according to the
-          specifications using various web dev technologies.
-        </li>
-        <li>
-          Showcased completed and in-progress solutions on my <a
-            href='your-website-url'>website</a
-          > and <a href='https://github.com/Brian-Pob'>GitHub repo</a>.
-        </li>
-      </ul>
-      <h3 id='whack-a-mole-minimalist-edition'>
-        Whack-a-Mole Minimalist Edition
-      </h3>
-      <ul>
-        <li>
-          <strong>Technologies:</strong> AlpineJS, Tailwind, JavaScript, HTML
-        </li>
-        <li>Built a minimal whack-a-mole style web-based game.</li>
-        <li>
-          Learned AlpineJS, an extremely lightweight JS library, and
-          TailwindCSS, a CSS utility-class library.
-        </li>
-        <li>
-          Code is open-source and available on <a
-            href='https://github.com/Brian-Pob/whack-a-mole'>GitHub</a
-          > and the game is hosted on Netlify.
-        </li>
-      </ul>
-      <h2 id='open-source-contributions'>Open Source Contributions</h2>
-      <ul>
-        <li>
-          <strong
-            >SolidJS Framework Documentation | SolidJS, GitHub, Pull Requests,
-            Documentation</strong
-          ><ul>
-            <li>
-              Contributed styling, formatting, and content fixes to the SolidJS
-              framework documentation to make the docs more consistent and
-              easier to understand.
-            </li>
-            <li>
-              Communicated with the SolidJS core team on their Discord server
-              before creating my pull request to make sure my changes were
-              useful and properly documented.
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <h2 id='professional-experience'>Professional Experience</h2>
-      <p>
-        <em
-          >For a full history of my work experience, please visit my <a
-            href='https://www.linkedin.com/in/brian-pob'>LinkedIn page</a
-          >.</em
-        >
-      </p>
-      <h3 id='contract-web-developer-venerate-agency'>
-        Contract Web Developer | Venerate Agency
-      </h3>
-      <p><em>Mar. 2022 – Present</em></p>
-      <ul>
-        <li>
-          Leveraging React and Styled Components to implement client-specified
-          designs for popular fashion brands such as The Gap and Old Navy.
-          Increasing conversion rate by presenting suggested clothes and
-          accessories.
-        </li>
-        <li>
-          Incorporated keyboard navigation and screen-reader text to enhance
-          React components to follow web accessibility standards and ensure ADA
-          compliance.
-        </li>
-        <li>
-          Aided in the development of a design system and utilized Storybook for
-          comprehensive testing and management. Implemented the design using
-          SCSS and Twig in Drupal.
-        </li>
-      </ul>
-      <h3 id='research-assistant-fsu-dept-of-computer-science'>
-        Research Assistant | FSU Dept. of Computer Science
-      </h3>
-      <p><em>May 2023 – Present</em></p>
-      <ul>
-        <li>
-          Engaged in ongoing research on the traffic monitoring system of the
-          Florida Department of Transportation.
-        </li>
-        <li>
-          Primary responsibilities include performing user research, evaluating
-          source code, and creating comprehensive documentation.
-        </li>
-        <li>
-          Identifying usability pain points to optimize user experience and
-          reduce friction in the data analysis and quality control process.
-        </li>
-        <li>
-          Using manual and automated tools to analyze source code cleanliness,
-          add missing documentation, and improve upgradeability.
-        </li>
-      </ul>
-      <h2 id='education'>Education</h2>
-      <ul>
-        <li>
-          <p><strong>Florida State University</strong></p>
-          <ul>
-            <li><em>B.S. in Computer Science</em> - 3.643 GPA</li>
-            <li><em>Aug. 2021 – May 2023</em></li>
-            <li>
-              3rd place of 11 teams - 2022 ICPC Regional Programming Contest
-            </li>
-          </ul>
-        </li>
-        <li>
-          <p><strong>Tallahassee Community College</strong></p>
-          <ul>
-            <li><em>AA Degree</em> - 3.930 GPA</li>
-            <li><em>Aug. 2019 – May 2021</em></li>
-          </ul>
-        </li>
-      </ul>
+      </p> -->
+      </section>
+
+      <section>
+        <h2 id='skills'>Skills</h2>
+        <ul>
+          <li>
+            <strong>Languages:</strong> HTML, CSS, JavaScript, TypeScript,
+            SASS/SCSS, PHP
+          </li>
+          <li>
+            <strong>Frameworks:</strong> React, NodeJS, SolidJS, Astro, Tailwind
+          </li>
+          <li>
+            <strong>Developer Tools:</strong> Git, CI/CD, Docker, WordPress,
+            Drupal
+          </li>
+          <li>
+            <strong>Other:</strong> REST APIs, Web Accessibility, ARIA, UX
+            Design, Figma, SQL
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 id='professional-experience'>Professional Experience</h2>
+        <p>
+          <em
+            >For a full history of my work experience, please visit my <a
+              href='https://www.linkedin.com/in/brian-pob'>LinkedIn page</a
+            >.</em
+          >
+        </p>
+
+        <h3 id='contract-web-developer-venerate-agency'>
+          Contract Web Developer | Venerate Agency
+        </h3>
+        <p><em>Mar. 2022 – Present</em></p>
+        <ul>
+          <li>
+            Crafting custom solutions that increase customer engagement and
+            improve conversion rates using React and Styled Components.
+          </li>
+          <li>
+            Incorporated keyboard navigation and screen-reader optimization to
+            follow web accessibility standards and ensure ADA compliance.
+          </li>
+          <li>
+            Developed and implemented a design system to increase developer
+            productivity and site extensibility. Maximized the use of Storybook
+            to ensure that the design system was thoroughly tested and
+            documented.
+          </li>
+        </ul>
+
+        <h3 id='research-assistant-fsu-dept-of-computer-science'>
+          Research Assistant | FSU Dept. of Computer Science
+        </h3>
+        <p><em>May 2023 – Present</em></p>
+        <ul>
+          <li>
+            Engaged in ongoing research on the traffic monitoring system of the
+            Florida Department of Transportation.
+          </li>
+          <li>
+            • Identifying usability pain points to optimize user experience and
+            reduce friction in the data analysis and quality control process.
+          </li>
+          <li>
+            Leveraged automated and manual analysis tools to sharpen source code
+            cleanliness and increase maintainability.
+          </li>
+        </ul>
+        <h2 id='education'>Education</h2>
+        <ul>
+          <li>
+            <p><strong>Florida State University</strong></p>
+            <ul>
+              <li><em>B.S. in Computer Science</em> - 3.643 GPA</li>
+              <li><em>Aug. 2021 – May 2023</em></li>
+              <li>
+                3rd place of 11 teams - 2022 ICPC Regional Programming Contest
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>Tallahassee Community College</strong></p>
+            <ul>
+              <li><em>AA Degree</em> - 3.930 GPA</li>
+              <li><em>Aug. 2019 – May 2021</em></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2 id='personal-projects'>Personal Projects</h2>
+        <h3 id='frontend-mentor-challenges'>Frontend Mentor Challenges</h3>
+        <ul>
+          <li>
+            <strong>Technologies:</strong> TypeScript, SCSS, SolidJS, Vite
+          </li>
+          <li>
+            Building components and webpages with SolidJS, SCSS, and other
+            modern web development tools to practice my frontend skills.
+          </li>
+          <li>
+            Followed designs crafted by Frontend Mentor and built according to
+            the specifications using various web dev technologies.
+          </li>
+          <li>
+            Showcased completed and in-progress solutions on my <a
+              href='your-website-url'>website</a
+            > and <a href='https://github.com/Brian-Pob'>GitHub repo</a>.
+          </li>
+        </ul>
+        <h3 id='whack-a-mole-minimalist-edition'>
+          Whack-a-Mole Minimalist Edition
+        </h3>
+        <ul>
+          <li>
+            <strong>Technologies:</strong> AlpineJS, Tailwind, JavaScript, HTML
+          </li>
+          <li>Built a minimal whack-a-mole style web-based game.</li>
+          <li>
+            Learned AlpineJS, an extremely lightweight JS library, and
+            TailwindCSS, a CSS utility-class library.
+          </li>
+          <li>
+            Code is open-source and available on <a
+              href='https://github.com/Brian-Pob/whack-a-mole'>GitHub</a
+            > and the game is hosted on Netlify.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 id='open-source-contributions'>Open Source Contributions</h2>
+        <ul>
+          <li>
+            <strong
+              >SolidJS Framework Documentation | SolidJS, GitHub, Pull Requests,
+              Documentation</strong
+            ><ul>
+              <li>
+                Enhanced consistency and readaibility of the SolidJS framework
+                documentation by contributing styling, formatting, and content
+                fixes to the repository.
+              </li>
+              <li>
+                Communicated with the SolidJS core team on their Discord server
+                before creating my pull request to make sure my changes were
+                useful and properly documented.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong
+              >Mozilla Developer Network (MDN) | JavaScript, Documentation,
+              WebAPIs</strong
+            >
+            <ul>
+              <li>
+                Enhanced the MDN Web Docs, one of the foremost go-to references
+                in web development, by filling in critical missing information
+                and enhancing the clarity of wording on the
+                <a
+                  href='https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API'
+                  >View Transitions API</a
+                > page.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      <Footer />
     </main>
-    <Footer />
   </body>
 </html>
