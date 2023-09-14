@@ -4,8 +4,12 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { Image } from 'astro:assets';
+
 import ageCalcWebM from '/age-calculator-sm.webm';
 import ageCalcMP4 from '/age-calculator-sm.mp4';
+
+import brFmWebM from '/br-fm.webm';
+import brFmMP4 from '/br-fm.mp4';
 ---
 
 <!doctype html>
@@ -22,11 +26,16 @@ import ageCalcMP4 from '/age-calculator-sm.mp4';
         display: block;
       }
 
+      video.no-border {
+        border: none;
+      }
+
       video {
         max-width: 95%;
       }
 
-      img + p {
+      img + p,
+      video + p {
         text-align: center;
         font-size: 0.9rem;
         font-style: italic;
@@ -61,6 +70,35 @@ import ageCalcMP4 from '/age-calculator-sm.mp4';
           >TypeScript</strong
         > for my personal projects.
       </p>
+      <p>
+        For my most recent work, I augmented components with improved
+        accessibility features for ADA compliance. This work is visible on
+        websites under the Gap family of brands such as Banana Republic, Old
+        Navy, and Athleta. Here's an example:
+      </p>
+
+      {/* TODO: Make this a separate component. */}
+      <div class='video-container'>
+        <video
+          autoplay
+          muted
+          loop
+          aria-label='Video demonstrating accessibility features'
+          class='no-border'
+        >
+          <source src={brFmWebM} type='video/webm' />
+          <source src={brFmMP4} type='video/mp4' />
+          <p>
+            Your browser doesn't support HTML5 video. Here is a
+            <a
+              href={new URL('br-findmine.mp4', Astro.url).toString()}
+              aria-label='Link to age calculator video'>link to the video</a
+            >instead.
+          </p>
+        </video>
+        <p>Look suggestion component on the Banana Republic website.</p>
+      </div>
+
       <p>
         This website is built with Astro. Most of it is still under development
         but you can check out the
