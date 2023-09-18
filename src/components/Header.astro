@@ -20,7 +20,10 @@ import SocialLinks from './SocialLinks.astro';
     </div>
   </nav>
 </header>
+
+
 <style>
+  /* TODO: Use dropdown menu for small mobile view */
   header {
     margin: 0;
     padding: 0 1rem;
@@ -73,15 +76,17 @@ import SocialLinks from './SocialLinks.astro';
     display: flex;
     gap: 1rem;
   }
-  @media (max-width: 720px) {
-    .social-links {
-      display: none;
-    }
-  }
 
   ul {
     display: flex;
     gap: 1rem;
-    overflow-x: scroll;
+  }
+  @media (max-width: 720px) {
+    .social-links {
+      display: none;
+    }
+    ul {
+      overflow-x: scroll;
+    }
   }
 </style>
