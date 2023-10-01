@@ -4,6 +4,8 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 :root {
   --accent: hsl(151, 43%, 45%);
   --accent-dark: hsl(151, 70%, 21%);
@@ -15,6 +17,7 @@
   --box-shadow: 0 2px 6px rgba(var(--gray), 25%),
     0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%);
 }
+/*
 @font-face {
   font-family: 'Atkinson';
   src: url('/fonts/atkinson-regular.woff') format('woff'), format('truetype');
@@ -22,15 +25,17 @@
   font-style: normal;
   font-display: swap;
 }
-@font-face {
+ @font-face {
   font-family: 'Space Grotesk';
   src: url('/fonts/space-grotesk.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-}
+} 
+*/
+
 body {
-  font-family: 'Atkinson', sans-serif;
+  font-family: 'Atkinson Hyperlegible', sans-serif;
   margin: 0;
   padding: 0;
   text-align: left;

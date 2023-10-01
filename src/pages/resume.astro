@@ -2,12 +2,12 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-
+import { slide } from 'astro:transitions';
 import { Image } from 'astro:assets';
 ---
 
 <!doctype html>
-<html lang='en'>
+<html lang='en' transition:animate={slide({})}>
   <head>
     <BaseHead
       title={`Brian Poblete - Resume`}
@@ -119,12 +119,12 @@ import { Image } from 'astro:assets';
             Florida Department of Transportation.
           </li>
           <li>
-            • Identifying usability pain points to optimize user experience and
+            Identifying usability pain points to optimize user experience and
             reduce friction in the data analysis and quality control process.
           </li>
           <li>
-            Leveraged automated and manual analysis tools to sharpen source code
-            cleanliness and increase maintainability.
+            Leveraged automated and manual analysis tools to improve code
+            readaibility.
           </li>
         </ul>
         <h2 id='education'>Education</h2>
