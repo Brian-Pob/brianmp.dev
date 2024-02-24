@@ -1,0 +1,43 @@
+---
+title: 'Cool Stuff pt. 0 - Astro'
+description: 'Intro to "Cool Stuff" series. Cool stuff that I find in the realm of tech and programming.'
+pubDate: 'Feb 24 2024'
+heroImage: './blog-placeholder-about.jpg'
+---
+
+import heroImage from './astro-islands-example.png'
+import houston from './houston.webp'
+
+This is my first blog post in a series I am calling "Cool Stuff."
+I want this to be a series of posts where I showcase some cool things I find in the realm of tech and programming!
+
+I want the main description of the cool thing to be under 150 words. 
+I think it's a good length to get the main idea across while also limiting myself from rambling on and on.
+Though, since this is the first post, I'm not counting these introductory words. 
+
+Anyway, let's get on to the first cool thing: Astro!
+
+---
+
+## Astro
+
+Astro is mainly a static site generator that allows you to build your site using a mix of HTML, JavaScript, and Markdown.
+You can also add dynamic elements to your site using JavaScript (including frameworks and libraries!) through what is known as the [Islands Architecture](https://docs.astro.build/en/concepts/islands/).
+
+<img {...heroImage} alt="an illustration demonstrating how the islands architecture can be implemented in a layour"/> 
+
+Btw, you can mix and match multiple libraries/ frameworks too! There are even libraries that allow you to [share state between different islands](https://docs.astro.build/en/recipes/sharing-state-islands/).
+
+Another thing I enjoy about Astro is the implementation of scoped styles.
+This means that CSS that you write for one page or component won't interfered with the styles for others!
+Astro implements this using clever features like [custom data attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes) and the [<code> :where</code> selector](https://developer.mozilla.org/en-US/docs/Web/CSS/:where).
+
+Astro has a **ton** more features that I did not mention here. So go check it out at [astro.build](https://astro.build/)!
+Overall, I find it really fun and easy to use and I would highly recommend it to anyone building any kind of website.
+
+<img {...houston} alt="Houston, the mascot of Astro" class="centered"/>
+---
+
+## References
+
+- [Astro](https://astro.build/)
