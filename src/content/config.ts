@@ -1,5 +1,6 @@
 import { type ImageMetadata } from 'astro';
 import { defineCollection, z } from 'astro:content';
+import type { OGPropsExtra } from '../types';
 
 const blog = defineCollection({
   // Type-check frontmatter using a schema
@@ -16,8 +17,10 @@ const blog = defineCollection({
         .string()
         .optional()
         .transform((str) => (str ? new Date(str) : undefined)),
-      heroImage: z.string().optional().or(image()),
-      extra: z.any().optional(),
+      // heroImage: z.string().optional().or(image()),
+      heroImage: image().optional(),
+      // extra is array of OGPropsExtra
+      extra: z.array(z.custom<OGPropsExtra>((val) => val)).optional(),
     }),
 });
 

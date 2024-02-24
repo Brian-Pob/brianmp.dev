@@ -4,19 +4,16 @@
 import '../styles/global.css';
 import '../styles/resume.css';
 import { ViewTransitions } from 'astro:transitions';
+import type { OGPropsExtra } from '../types';
 
-interface OGPropsExtra {
-  property: string;
-  content: string;
-  isName?: false;
-}
-interface Props {
+type Props = {
   title: string;
   description: string;
   image?: string;
   contentType?: string;
   extra?: OGPropsExtra[];
-}
+};
+
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 

@@ -21,14 +21,16 @@ const { title, description, pubDate, updatedDate, heroImage, extra } =
         max-width: 100%;
         margin: 0;
       }
-      .hero-image {
-        width: 100%;
-      }
       .hero-image img {
         display: block;
         margin: 0 auto;
         border-radius: 12px;
         box-shadow: var(--box-shadow);
+
+        max-width: 100%;
+        aspect-ratio: 2 / 1;
+        object-fit: cover;
+        object-position: top;
       }
       .prose {
         width: 720px;
@@ -56,6 +58,11 @@ const { title, description, pubDate, updatedDate, heroImage, extra } =
       .prose :global(strong) {
         font-size: 1.333rem;
       }
+
+      .prose :global(img) {
+        display: block;
+        margin: 0 auto;
+      }
     </style>
   </head>
 
@@ -64,14 +71,7 @@ const { title, description, pubDate, updatedDate, heroImage, extra } =
     <main>
       <article>
         <div class='hero-image'>
-          {
-            heroImage &&
-              (typeof heroImage === 'string' ? (
-                <Image width={1020} height={510} src={heroImage} alt='' />
-              ) : (
-                <Image src={heroImage} alt='' />
-              ))
-          }
+          <img {...heroImage}>
         </div>
         <div class='prose'>
           <div class='title'>
