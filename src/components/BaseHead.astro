@@ -6,11 +6,13 @@ import '../styles/resume.css';
 import { ViewTransitions } from 'astro:transitions';
 import type { OGPropsExtra } from '../types';
 
+
 type Props = {
   title: string;
-  description: string;
   image?: string;
+  description: string;
   contentType?: string;
+  customImageSrc?: string;
   extra?: OGPropsExtra[];
 };
 
@@ -23,6 +25,7 @@ const {
   image = '/og-banner.jpg',
   contentType = 'website',
   extra = [],
+  customImageSrc,
 } = Astro.props;
 ---
 
@@ -81,13 +84,26 @@ const {
     </>
   )
 }
+{
+  // If customImageSrc is provided, use that as the image, otherwise use the default
+  customImageSrc ? (
+    <>
+      <meta property='og:image' content={new URL(customImageSrc, Astro.url)} />
+      <meta name='twitter:image' content={new URL(customImageSrc, Astro.url)} />
+    </>
+  ) : (
+    <>
+      <meta property='og:image' content={new URL(image, Astro.url)} />
+      <meta name='twitter:image' content={new URL(image, Astro.url)} />
+    </>
+  )
+}
 
 <!-- Open Graph / Facebook -->
 <meta property='og:type' content={contentType} />
 <meta property='og:url' content={Astro.url} />
 <meta property='og:title' content={title} />
 <meta property='og:description' content={description} />
-<meta property='og:image' content={new URL(image, Astro.url)} />
 <meta property='og:site_name' content='brianmp.dev' />
 
 <!-- Twitter -->
@@ -95,4 +111,3 @@ const {
 <meta name='twitter:url' content={Astro.url} />
 <meta name='twitter:title' content={title} />
 <meta name='twitter:description' content={description} />
-<meta name='twitter:image' content={new URL(image, Astro.url)} />

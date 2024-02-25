@@ -1,4 +1,3 @@
-import { type ImageMetadata } from 'astro';
 import { defineCollection, z } from 'astro:content';
 import type { OGPropsExtra } from '../types';
 
