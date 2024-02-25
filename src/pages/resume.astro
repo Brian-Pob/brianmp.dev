@@ -2,7 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { slide } from 'astro:transitions';
+import image from '../assets/ipad-wireframe.png';
 ---
 
 <!doctype html>
@@ -11,6 +11,7 @@ import { slide } from 'astro:transitions';
     <BaseHead
       title={`Brian Poblete - Resume`}
       description={`1.5+ years experience with React. 3+ years experience with HTML5, CSS3, and JavaScript. 2+ years experience with UI/UX Design.`}
+      image={image.src}
     />
     <style>
       img {
@@ -19,6 +20,11 @@ import { slide } from 'astro:transitions';
         border: 5px solid;
         border-radius: 3px;
         border-color: hsl(151deg 79% 73%);
+      }
+
+      .hero-img {
+        border: none;
+        box-shadow: var(--box-shadow-md);
       }
       blockquote {
         margin-top: 1rem;
@@ -40,6 +46,13 @@ import { slide } from 'astro:transitions';
           Compliance. Currently working with React and TypeScript.
         </p>
         <a href='/BrianPoblete_resume.pdf' download>
+          <img
+            class='resume-img'
+            src='/resume.png'
+            alt='Brian Poblete - Resume Download'
+            width='500'
+            height='647'
+          />
           <p>Click to download resume</p>
         </a>
       </section>
