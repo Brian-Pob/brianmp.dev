@@ -33,7 +33,6 @@ const posts = (await getCollection('blog')).sort(
         text-align: center;
         & img {
           max-width: 100%;
-          max-height: 360px;
           object-fit: cover;
           object-position: top;
         }
@@ -49,7 +48,6 @@ const posts = (await getCollection('blog')).sort(
           transition: 0.2s ease;
         }
         & img {
-          max-width: 480px;
           aspect-ratio: 2 / 1;
           object-fit: cover;
           object-position: top;
@@ -109,7 +107,7 @@ const posts = (await getCollection('blog')).sort(
                 <a href={`/blog/${post.slug}/`}>
                 {
                   post.data.heroImage ?
-                    <img width={720} height={360} {...post.data.heroImage} />
+                    <img {...post.data.heroImage} />
                     : <img width={720} height={360} src="/og-banner-no-tag.png" alt="" />
 
                 }
