@@ -71,9 +71,13 @@ const { title, description, pubDate, updatedDate, heroImage, extra } =
     <Header />
     <main>
       <article>
-        <div class='hero-image'>
-          <img {...heroImage}>
-        </div>
+        {
+          heroImage && (
+            <div class='hero-image'>
+                <img {...heroImage}>
+            </div>
+          )
+        }
         <div class='prose'>
           <div class='title'>
             <div class='date'>
