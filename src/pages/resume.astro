@@ -2,15 +2,16 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { slide } from 'astro:transitions';
+import image from '../assets/ipad-wireframe.png';
 ---
 
 <!doctype html>
-<html lang='en' transition:animate={slide({})}>
+<html lang='en'>
   <head>
     <BaseHead
       title={`Brian Poblete - Resume`}
       description={`1.5+ years experience with React. 3+ years experience with HTML5, CSS3, and JavaScript. 2+ years experience with UI/UX Design.`}
+      image={image.src}
     />
     <style>
       img {
@@ -19,6 +20,11 @@ import { slide } from 'astro:transitions';
         border: 5px solid;
         border-radius: 3px;
         border-color: hsl(151deg 79% 73%);
+      }
+
+      .hero-img {
+        border: none;
+        box-shadow: var(--box-shadow-md);
       }
       blockquote {
         margin-top: 1rem;
@@ -40,39 +46,37 @@ import { slide } from 'astro:transitions';
           Compliance. Currently working with React and TypeScript.
         </p>
         <a href='/BrianPoblete_resume.pdf' download>
-          <!-- <Image
-          src='/resume.png'
-          alt='Brian Poblete - Resume Download'
-          width='500'
-          height='647'
-          class='resume-img'
-        /> -->
+          <img
+            class='resume-img'
+            src='/resume.png'
+            alt='Brian Poblete - Resume Download'
+            width='500'
+            height='647'
+          />
           <p>Click to download resume</p>
         </a>
-        <!-- <p>
-        <strong>Frontend Developer</strong><br />Email: brianmp.dev@gmail.com | <a
-          href='https://www.linkedin.com/in/brian-pob'>LinkedIn</a
-        > | <a href='https://github.com/Brian-Pob'>GitHub</a>
-      </p> -->
       </section>
 
       <section>
         <h2 id='skills'>Skills</h2>
         <ul>
           <li>
-            <strong>Languages:</strong> HTML, CSS, JavaScript, TypeScript,
-            SASS/SCSS, PHP
+            <strong>Languages:</strong> HTML, CSS, JavaScript, TypeScript, SASS/SCSS,
+            PHP
           </li>
           <li>
-            <strong>Frameworks:</strong> React, NodeJS, SolidJS, Astro, Tailwind
+            <strong>Frameworks &amp; Libraries:</strong> React, NodeJS, SolidJS,
+            Astro, Open Props, Tailwind
           </li>
           <li>
-            <strong>Developer Tools:</strong> Git, CI/CD, Docker, WordPress,
-            Drupal
+            <strong>Design Skills:</strong> Web Design, UX Design, Web Accessibility,
+            ARIA, User Research, Heuristic Evaluation, Figma
           </li>
           <li>
-            <strong>Other:</strong> REST APIs, Web Accessibility, ARIA, UX
-            Design, Figma, SQL
+            <strong>Backend:</strong> Python, Flask, C, C++, Java, MongoDB, SQL
+          </li>
+          <li>
+            <strong>Developer Tools:</strong> Git, CI/CD, Docker, WordPress, Drupal
           </li>
         </ul>
       </section>
@@ -87,10 +91,29 @@ import { slide } from 'astro:transitions';
           >
         </p>
 
+        <h3 id='research-assistant-fsu-dept-of-computer-science'>
+          Research Assistant | FSU Dept. of Computer Science
+        </h3>
+        <p><em>May 2023 &mdash; Present</em></p>
+        <ul>
+          <li>
+            Engaged in ongoing research on the traffic monitoring system of the
+            Florida Department of Transportation.
+          </li>
+          <li>
+            Identifying usability pain points to optimize user experience and
+            reduce friction in the data analysis and quality control process.
+          </li>
+          <li>
+            Leveraged automated and manual analysis tools to improve code
+            readaibility.
+          </li>
+        </ul>
+
         <h3 id='contract-web-developer-venerate-agency'>
           Contract Web Developer | Venerate Agency
         </h3>
-        <p><em>Mar. 2022 – Present</em></p>
+        <p><em>Mar. 2022 &mdash; May 2023</em></p>
         <ul>
           <li>
             Crafting custom solutions that increase customer engagement and
@@ -108,28 +131,16 @@ import { slide } from 'astro:transitions';
           </li>
         </ul>
 
-        <h3 id='research-assistant-fsu-dept-of-computer-science'>
-          Research Assistant | FSU Dept. of Computer Science
-        </h3>
-        <p><em>May 2023 – Present</em></p>
-        <ul>
-          <li>
-            Engaged in ongoing research on the traffic monitoring system of the
-            Florida Department of Transportation.
-          </li>
-          <li>
-            Identifying usability pain points to optimize user experience and
-            reduce friction in the data analysis and quality control process.
-          </li>
-          <li>
-            Leveraged automated and manual analysis tools to improve code
-            readaibility.
-          </li>
-        </ul>
         <h2 id='education'>Education</h2>
         <ul>
           <li>
             <p><strong>Florida State University</strong></p>
+            <ul>
+              <li><em>M.S. in Computer Science</em> - 3.938 GPA</li>
+              <li><em>May. 2023 – Dec. 2024</em></li>
+              <li>Vice President of the ACM FSU Chapter - 2023</li>
+            </ul>
+            <hr style="border: 0px;">
             <ul>
               <li><em>B.S. in Computer Science</em> - 3.643 GPA</li>
               <li><em>Aug. 2021 – May 2023</em></li>
@@ -149,6 +160,27 @@ import { slide } from 'astro:transitions';
       </section>
       <section>
         <h2 id='personal-projects'>Personal Projects</h2>
+        <h3 id='personal-website'>Personal Website</h3>
+        <ul>
+          <li>
+            <strong>Technologies:</strong> Astro, TypeScript, S/CSS, Vite
+          </li>
+          <li>
+            Built a personal website using Astro, a modern static site generator
+            that allows me to use modern web development tools and techniques
+            while still delivering a fast and accessible website.
+          </li>
+          <li>
+            Utilized TypeScript, SCSS, and Vite to build a modern, responsive,
+            and accessible website that showcases my work and skills.
+          </li>
+          <li>
+            Hosted on Vercel and open-source on 
+            <a href='https://github.com/Brian-Pob/brianmp.dev' target='_blank'>
+              GitHub
+            </a>.
+          </li>
+        </ul>
         <h3 id='frontend-mentor-challenges'>Frontend Mentor Challenges</h3>
         <ul>
           <li>

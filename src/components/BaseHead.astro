@@ -19,14 +19,15 @@ type Props = {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const {
+let {
   title,
   description,
-  image = '/og-banner.jpg',
+  image,
   contentType = 'website',
   extra = [],
-  customImageSrc,
 } = Astro.props;
+
+image = image ?? '/og-banner-no-tag.png';
 ---
 
 <!-- Global Metadata -->
@@ -86,17 +87,10 @@ const {
 }
 {
   // If customImageSrc is provided, use that as the image, otherwise use the default
-  customImageSrc ? (
-    <>
-      <meta property='og:image' content={new URL(customImageSrc, Astro.url)} />
-      <meta name='twitter:image' content={new URL(customImageSrc, Astro.url)} />
-    </>
-  ) : (
     <>
       <meta property='og:image' content={new URL(image, Astro.url)} />
       <meta name='twitter:image' content={new URL(image, Astro.url)} />
     </>
-  )
 }
 
 <!-- Open Graph / Facebook -->
