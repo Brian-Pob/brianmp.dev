@@ -9,3 +9,34 @@
        max-width: 30ch;
    }
 </style>
+
+<script>
+    const getTheme = () => {
+        const theme = localStorage.getItem('theme') || 'auto';
+        return theme;
+    };
+
+    const setTheme = (theme) => {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        document.querySelector('.current-theme').textContent = theme;
+    };
+
+    document.querySelector('.theme-toggle').addEventListener('click', (e) => {
+        const theme = getTheme();
+        switch (theme) {
+            case 'auto':
+                setTheme('light');
+                break;
+            case 'light':
+                setTheme('dark');
+                break;
+            case 'dark':
+                setTheme('auto');
+                break;
+        }
+    });
+
+    setTheme(getTheme());
+
+</script>
