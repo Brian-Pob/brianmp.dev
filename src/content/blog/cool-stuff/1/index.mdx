@@ -1,0 +1,35 @@
+---
+title: 'Cool Stuff pt. 1 - oklch()'
+description: 'oklch() is a new color function in CSS that allows developers and designers to more easily create beautiful and accessible color palettes based on a single formula.'
+pubDate: 'Feb 25 2024'
+heroImage: './oklch.jpg'
+---
+
+## What is `oklch()`?
+
+`oklch()` is a color function introduced in the CSS Color 4 specification that fixes several problems present in other color functions like `rgb()` hex, and `hsl()` in addition to allowing access to more colors.
+
+## How is it better?
+
+First, `oklch()` colors are just easier to understand. With `oklch()`, you just need to decide how bright you want the color, how saturated you want it, and the degree on the color wheel. No more messing with hexadecimal numbers or guessing how much blue or red you need.
+
+## Wait, that just sounds like `hsl()`.
+
+And you would be right. But one advantage it has over `hsl()` is that the lightness of `oklch()` is based on **perceived** lightness. Meaning, when you modify your color's hue, the brightness stays the same. See the example below.
+
+<p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="bGZXgjg" data-user="brian-pob" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/brian-pob/pen/bGZXgjg">
+  Untitled</a> by Brian Michael Poblete (<a href="https://codepen.io/brian-pob">@brian-pob</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+Using `oklch()`, we know that changes to hue won't lead to brightness-related contrast issues!
+
+---
+
+## References
+
+- [OKLCH in CSS: why we moved from RGB and HSL - Andrey Sitnik & Travis Turner, Evil Martians](https://evilmartians.com/chronicles/oklch-in-css-why-quit-rgb-hsl)
+- [Thinking on ways to solve color palettes - Adam Argyle, Chrome for Developers](https://youtu.be/6aCsAMgwnjE?si=caqNn1B6fpczj-Ox)
+- [oklch() - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch)
