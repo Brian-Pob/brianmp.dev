@@ -3,7 +3,7 @@ import SocialLinks from './SocialLinks.astro';
 const today = new Date();
 ---
 
-<footer transition:persist>
+<footer >
   &copy; {today.getFullYear()} Brian Poblete. All rights reserved.
   <div class='social-links'>
     <SocialLinks />
@@ -37,13 +37,14 @@ const today = new Date();
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    gap: 1rem;
   }
 
   .social-links {
     display: flex;
     justify-content: center;
     gap: 1em;
-    margin-top: 1em;
   }
 
   a {
@@ -65,7 +66,6 @@ const today = new Date();
   }
 
   svg {
-    margin-top: 0.5rem;
     height: 1rem;
     fill: currentcolor;
   }
