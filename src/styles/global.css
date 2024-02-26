@@ -4,8 +4,29 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 400;
+  font-display: auto;
+  src: url('/fonts/atkinson_regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 700;
+  font-display: auto;
+  src: url('/fonts/atkinson_bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 400, 500, 600, 700;
+  font-display: auto;
+  src: url('/fonts/space_grotesk.ttf') format('truetype');
+}
 
 :root {
   --accent: hsl(151, 43%, 45%);
@@ -41,14 +62,23 @@ body {
   line-height: 1.7;
 }
 
-@media(prefers-color-scheme: dark) {
-    body {
-        --surface: #1a1a1a;
-        --surface-secondary: #2a2a2a;
-        --text-primary: rgb(var(--gray-light));
-        --text-secondary: rgb(var(--gray-light));
-    }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface: #1a1a1a;
+    --surface-secondary: #2a2a2a;
+    --text-primary: rgb(var(--gray-light));
+    --text-secondary: rgb(var(--gray-light));
+  }
+
+  [data-theme="light"] {
+    --surface: white;
+    --surface-secondary: rgb(var(--gray-light));
+    --text-primary: rgb(var(--gray-dark));
+    --text-secondary: rgb(var(--black));
+  }
 }
+
 
 main {
   width: 720px;
@@ -119,6 +149,13 @@ textarea {
 
 input {
   font-size: 16px;
+}
+
+button, input, optgroup, select, textarea {
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  color: inherit;
 }
 
 table {

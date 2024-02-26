@@ -30,6 +30,7 @@ let {
 image = image ?? '/og-banner-no-tag.png';
 ---
 
+
 <!-- Global Metadata -->
 <meta charset='utf-8' />
 <meta name='viewport' content='width=device-width,initial-scale=1' />
@@ -38,21 +39,28 @@ image = image ?? '/og-banner-no-tag.png';
 <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
 <meta name='generator' content={Astro.generator} />
 
-<ViewTransitions fallback='none' />
+<ViewTransitions />
 
 <!-- Font preloads -->
 <link
   rel='preload'
-  href='/fonts/atkinson-regular.woff'
+  href='/fonts/atkinson_regular.woff'
   as='font'
   type='font/woff'
   crossorigin
 />
 <link
   rel='preload'
-  href='/fonts/atkinson-bold.woff'
+  href='/fonts/atkinson_bold.woff'
   as='font'
   type='font/woff'
+  crossorigin
+/>
+<link
+  rel='preload'
+  href='/fonts/space_grotesk.ttf'
+  as='font'
+  type='font/ttf'
   crossorigin
 />
 
