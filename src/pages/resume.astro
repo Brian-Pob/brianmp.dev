@@ -1,12 +1,13 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import {Image} from 'astro:assets';
 import image from '../assets/ipad-wireframe.png';
 ---
 
-<!doctype html>
-<html lang='en'>
+<BaseLayout>
   <head>
     <BaseHead
       title={`Brian Poblete - Resume`}
@@ -46,12 +47,13 @@ import image from '../assets/ipad-wireframe.png';
           Compliance. Currently working with React and TypeScript.
         </p>
         <a href='/BrianPoblete_resume.pdf' download>
-          <img
+          <Image
             class='resume-img'
             src='/resume.png'
             alt='Brian Poblete - Resume Download'
             width='500'
             height='647'
+            loading="eager"
           />
           <p>Click to download resume</p>
         </a>
@@ -175,7 +177,7 @@ import image from '../assets/ipad-wireframe.png';
             and accessible website that showcases my work and skills.
           </li>
           <li>
-            Hosted on Vercel and open-source on 
+            Hosted on Vercel and open-source on
             <a href='https://github.com/Brian-Pob/brianmp.dev' target='_blank'>
               GitHub
             </a>.
@@ -262,4 +264,4 @@ import image from '../assets/ipad-wireframe.png';
     </main>
     <Footer />
   </body>
-</html>
+</BaseLayout>
