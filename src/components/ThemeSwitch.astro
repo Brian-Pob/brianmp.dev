@@ -20,7 +20,7 @@
 
         const date = new Date();
         date.setFullYear(date.getFullYear() + 1);
-        document.cookie = `theme=${theme}; expires=${date.toUTCString()}; path=/`;
+        document.cookie = `theme=${theme}; expires=${date.toUTCString()};`;
 
         document.querySelector('.current-theme').textContent = theme;
     };
