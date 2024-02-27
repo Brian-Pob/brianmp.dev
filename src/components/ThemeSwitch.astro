@@ -1,4 +1,7 @@
-<button class="theme-toggle" transition:persist> theme toggle: <span class="current-theme">system</span> </button>
+---
+const theme = Astro.cookies.get("theme")?.value ?? "system";
+---
+<button class="theme-toggle" transition:persist> theme toggle: <span class="current-theme">{theme}</span> </button>
 <style>
    .theme-toggle {
        padding: 1rem 1.5rem;
