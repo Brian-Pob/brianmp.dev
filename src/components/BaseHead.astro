@@ -93,13 +93,6 @@ image = image ?? '/og-banner-no-tag.png';
     </>
   )
 }
-{
-  // If customImageSrc is provided, use that as the image, otherwise use the default
-    <>
-      <meta property='og:image' content={new URL(image, Astro.url)} />
-      <meta name='twitter:image' content={new URL(image, Astro.url)} />
-    </>
-}
 
 <!-- Open Graph / Facebook -->
 <meta property='og:type' content={contentType} />
@@ -107,9 +100,11 @@ image = image ?? '/og-banner-no-tag.png';
 <meta property='og:title' content={title} />
 <meta property='og:description' content={description} />
 <meta property='og:site_name' content='brianmp.dev' />
+<meta property='og:image' content={new URL(image, Astro.url)} />
 
 <!-- Twitter -->
 <meta name='twitter:card' content='summary_large_image' />
 <meta name='twitter:url' content={Astro.url} />
 <meta name='twitter:title' content={title} />
 <meta name='twitter:description' content={description} />
+<meta name='twitter:image' content={new URL(image, Astro.url)} />
