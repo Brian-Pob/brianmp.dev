@@ -71,6 +71,7 @@ body {
     --surface-secondary: #2a2a2a;
     --text-primary: rgb(var(--gray-light));
     --text-secondary: rgb(var(--gray-light));
+    color-scheme: dark;
   }
 }
 
