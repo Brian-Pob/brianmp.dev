@@ -8,6 +8,7 @@ import { Image } from 'astro:assets';
 
 import ageCalcWebM from '/age-calculator-sm.webm';
 import ageCalcMP4 from '/age-calculator-sm.mp4';
+import resumeImage from '../assets/resume.png';
 
 import brFmWebM from '/br-fm.webm';
 import brFmMP4 from '/br-fm.mp4';
@@ -115,10 +116,11 @@ import brFmMP4 from '/br-fm.mp4';
         <a href='/BrianPoblete_resume.pdf' download>
           <Image
             class='resume-img'
-            src='/resume.png'
+            src={resumeImage}
             alt='Brian Poblete - Resume Download'
             width='500'
             height='647'
+            loading="eager"
           />
           <p>Click to download resume</p>
         </a>
