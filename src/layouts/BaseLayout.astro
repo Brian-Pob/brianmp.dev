@@ -1,11 +1,4 @@
----
-let theme = "system";
-if (Astro.cookies.has("theme")) {
-  const cookie = Astro.cookies.get("theme");
-  theme = cookie.value;
-}
----
 <!doctype html>
-<html lang="en" data-theme={theme}>
+<html lang="en">
   <slot />
 </html>

@@ -1,49 +1,46 @@
----
-const theme = Astro.cookies.get("theme")?.value ?? "system";
----
-<button class="theme-toggle" transition:persist> theme toggle: <span class="current-theme">{theme}</span> </button>
+<button class="theme-toggle" transition:persist>
+  theme toggle: <span class="current-theme">system</span>
+</button>
 <style>
-   .theme-toggle {
-       padding: 1rem 1.5rem;
-       border: none;
-       background-color: var(--text-secondary);
-       color: var(--surface);
-       max-width: 30ch;
-   }
+  .theme-toggle {
+    padding: 1rem 1.5rem;
+    border: none;
+    background-color: var(--text-secondary);
+    color: var(--surface);
+    max-width: 30ch;
+  }
 </style>
 
-<script>
-    const getTheme = () => {
+<script is:inline>
+  const getTheme = () => {
+    const theme = localStorage.getItem("theme") ?? "system";
+    return theme;
+  };
 
-        const theme = document.cookie
-            .split('; ')
-            .find((row) => row.startsWith('theme='))
-            ?.split('=')[1] ?? 'system';
-        return theme;
-    };
+  const setTheme = (theme) => {
+    document.documentElement.setAttribute("data-theme", theme);
 
-    const setTheme = (theme) => {
-        document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem("theme", theme);
 
-        const date = new Date();
-        date.setFullYear(date.getFullYear() + 1);
-        document.cookie = `theme=${theme}; expires=${date.toUTCString()};`;
+    document.querySelector(".current-theme").textContent = theme;
+  };
 
-        document.querySelector('.current-theme').textContent = theme;
-    };
+  document.querySelector(".theme-toggle").addEventListener("click", (e) => {
+    const theme = getTheme();
+    switch (theme) {
+      case "system":
+        setTheme("light");
+        break;
+      case "light":
+        setTheme("dark");
+        break;
+      case "dark":
+        setTheme("system");
+        break;
+    }
+  });
 
-    document.querySelector('.theme-toggle').addEventListener('click', (e) => {
-        const theme = getTheme();
-        switch (theme) {
-            case 'system':
-                setTheme('light');
-                break;
-            case 'light':
-                setTheme('dark');
-                break;
-            case 'dark':
-                setTheme('system');
-                break;
-        }
-    });
+  document.addEventListener("astro:after-swap", () => setTheme(getTheme()));
+
+  setTheme(getTheme());
 </script>
