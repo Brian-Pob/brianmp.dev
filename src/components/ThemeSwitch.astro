@@ -1,5 +1,4 @@
-
-<button class="theme-toggle" transition:persist> theme toggle: <span class="current-theme">auto</span> </button>
+<button class="theme-toggle" transition:persist> theme toggle: <span class="current-theme">system</span> </button>
 <style>
    .theme-toggle {
        padding: 1rem 1.5rem;
@@ -12,31 +11,32 @@
 
 <script>
     const getTheme = () => {
-        const theme = localStorage.getItem('theme') || 'auto';
+        const theme = document.documentElement.getAttribute('data-theme') || 'system';
         return theme;
     };
 
     const setTheme = (theme) => {
         document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
+
+        const date = new Date();
+        date.setFullYear(date.getFullYear() + 1);
+        document.cookie = `theme=${theme}; expires=${date.toUTCString()}; path=/`;
+
         document.querySelector('.current-theme').textContent = theme;
     };
 
     document.querySelector('.theme-toggle').addEventListener('click', (e) => {
         const theme = getTheme();
         switch (theme) {
-            case 'auto':
+            case 'system':
                 setTheme('light');
                 break;
             case 'light':
                 setTheme('dark');
                 break;
             case 'dark':
-                setTheme('auto');
+                setTheme('system');
                 break;
         }
     });
-
-    setTheme(getTheme());
-
 </script>
