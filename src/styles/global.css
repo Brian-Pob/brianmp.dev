@@ -8,7 +8,7 @@
   font-family: 'Atkinson Hyperlegible';
   font-style: normal;
   font-weight: 400;
-  font-display: auto;
+  font-display: swap;
   src: url('/fonts/atkinson_regular.woff') format('woff');
 }
 
@@ -16,7 +16,7 @@
   font-family: 'Atkinson Hyperlegible';
   font-style: normal;
   font-weight: 700;
-  font-display: auto;
+  font-display: swap;
   src: url('/fonts/atkinson_bold.woff') format('woff');
 }
 
@@ -24,7 +24,7 @@
   font-family: 'Space Grotesk';
   font-style: normal;
   font-weight: 400, 500, 600, 700;
-  font-display: auto;
+  font-display: swap;
   src: url('/fonts/space_grotesk.ttf') format('truetype');
 }
 
