@@ -1,0 +1,7 @@
+---
+const theme = Astro.cookies.get("theme")?.value ?? "system";
+---
+<!doctype html>
+<html lang="en" data-theme={theme}>
+  <slot />
+</html>
