@@ -8,6 +8,6 @@ import vercel from "@astrojs/vercel/serverless";
 export default defineConfig({
   site: 'https://brianmp.dev',
   integrations: [mdx(), sitemap()],
-  output: "hybrid",
+  output: "server",
   adapter: vercel()
 });

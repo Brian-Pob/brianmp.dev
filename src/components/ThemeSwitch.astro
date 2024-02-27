@@ -14,7 +14,11 @@ const theme = Astro.cookies.get("theme")?.value ?? "system";
 
 <script>
     const getTheme = () => {
-        const theme = document.documentElement.getAttribute('data-theme') || 'system';
+
+        const theme = document.cookie
+            .split('; ')
+            .find((row) => row.startsWith('theme='))
+            ?.split('=')[1] ?? 'system';
         return theme;
     };
 
