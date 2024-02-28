@@ -10,7 +10,7 @@ import FormattedDate from '../components/FormattedDate.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage, extra } =
+const { status, title, description, pubDate, updatedDate, heroImage, extra } =
   Astro.props;
 ---
 
@@ -93,12 +93,19 @@ const { title, description, pubDate, updatedDate, heroImage, extra } =
 
   <body>
     <Header />
+    {
+      status === 'preview' && (
+        <div class='prose' style="background-color:firebrick; color: white; text-align: center; font-size: 2rem;">
+          <p>This post is under construction.</p>
+        </div>
+      )
+    }
     <main>
       <article>
         {
           heroImage && (
             <div class='hero-image'>
-                <Image src={heroImage} alt="" loading="eager">
+                <Image src={heroImage} alt="" loading="eager"/>
             </div>
           )
         }
