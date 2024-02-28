@@ -17,7 +17,7 @@ const { status, title, description, pubDate, updatedDate, heroImage, extra } =
 
 <BaseLayout>
   <head>
-    <BaseHead title={title} description={description} extra={extra} image={heroImage?.src}/>
+    <BaseHead title={title} description={description} extra={extra} image={heroImage?.src} status={status}/>
     <style>
       main {
         width: calc(100% - 2em);

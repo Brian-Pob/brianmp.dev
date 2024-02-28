@@ -8,6 +8,7 @@ import type { OGPropsExtra } from '../types';
 
 
 type Props = {
+  status?: "draft" | "preview" | "published";
   title: string;
   image?: string;
   description: string;
@@ -20,6 +21,7 @@ type Props = {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 let {
+  status,
   title,
   description,
   image,
@@ -28,6 +30,13 @@ let {
 } = Astro.props;
 
 image = image ?? '/og-banner-no-tag.png';
+
+// const isDraft = status === 'preview' ? '[PREVIEW]' : '';
+let isPreview = '';
+
+if (status !== undefined && status === 'preview') {
+  isPreview = '[PREVIEW]';
+} 
 ---
 
 
@@ -97,14 +106,14 @@ image = image ?? '/og-banner-no-tag.png';
 <!-- Open Graph / Facebook -->
 <meta property='og:type' content={contentType} />
 <meta property='og:url' content={Astro.url} />
-<meta property='og:title' content={title} />
-<meta property='og:description' content={description} />
+<meta property='og:title' content={isPreview.concat(title)} />
+<meta property='og:description' content={isPreview.concat(description)} />
 <meta property='og:site_name' content='brianmp.dev' />
 <meta property='og:image' content={new URL(image, Astro.url)} />
 
 <!-- Twitter -->
 <meta name='twitter:card' content='summary_large_image' />
 <meta name='twitter:url' content={Astro.url} />
-<meta name='twitter:title' content={title} />
-<meta name='twitter:description' content={description} />
+<meta name='twitter:title' content={isPreview.concat(title)} />
+<meta name='twitter:description' content={isPreview.concat(description)} />
 <meta name='twitter:image' content={new URL(image, Astro.url)} />
