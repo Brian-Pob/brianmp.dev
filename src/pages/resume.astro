@@ -5,6 +5,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import {Image} from 'astro:assets';
 import image from '../assets/ipad-wireframe.png';
+import resumeImage from '../assets/resume.png';
 ---
 
 <BaseLayout>
@@ -49,7 +50,7 @@ import image from '../assets/ipad-wireframe.png';
         <a href='/BrianPoblete_resume.pdf' download>
           <Image
             class='resume-img'
-            src='/resume.png'
+            src={resumeImage}
             alt='Brian Poblete - Resume Download'
             width='500'
             height='647'
