@@ -35,8 +35,11 @@ image = image ?? '/og-banner-no-tag.png';
 let isPreview = '';
 
 if (status !== undefined && status === 'preview') {
-  isPreview = '[PREVIEW]';
-} 
+  isPreview = '[PREVIEW] ';
+}
+
+const siteTitle = `${isPreview}${title}`;
+const siteDescription = `${isPreview}${description}`;
 ---
 
 
@@ -106,14 +109,14 @@ if (status !== undefined && status === 'preview') {
 <!-- Open Graph / Facebook -->
 <meta property='og:type' content={contentType} />
 <meta property='og:url' content={Astro.url} />
-<meta property='og:title' content={isPreview.concat(title)} />
-<meta property='og:description' content={isPreview.concat(description)} />
+<meta property='og:title' content={siteTitle} />
+<meta property='og:description' content={siteDescription} />
 <meta property='og:site_name' content='brianmp.dev' />
 <meta property='og:image' content={new URL(image, Astro.url)} />
 
 <!-- Twitter -->
 <meta name='twitter:card' content='summary_large_image' />
 <meta name='twitter:url' content={Astro.url} />
-<meta name='twitter:title' content={isPreview.concat(title)} />
-<meta name='twitter:description' content={isPreview.concat(description)} />
+<meta name='twitter:title' content={siteTitle} />
+<meta name='twitter:description' content={siteDescription} />
 <meta name='twitter:image' content={new URL(image, Astro.url)} />
