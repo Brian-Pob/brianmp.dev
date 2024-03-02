@@ -5,6 +5,7 @@ import SocialLinks from './SocialLinks.astro';
 ---
 
 <header transition:animate='none'>
+  <a href='#main-content' class='sr-only sr-show-on-focus' id="skip-link" >Skip to main content</a>
   <nav>
     <h2><a href='/'>{SITE_TITLE}</a></h2>
     <div class='internal-links'>
@@ -23,7 +24,13 @@ import SocialLinks from './SocialLinks.astro';
 
 
 <style>
-  /* TODO: Use dropdown menu for small mobile view */
+  #skip-link {
+    position: absolute;
+    left: 0;
+    background: var(--surface);
+    padding: 1rem;
+    z-index: 100;
+  }
   header {
     margin: 0;
     padding: 0 1rem;

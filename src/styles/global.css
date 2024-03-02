@@ -252,3 +252,13 @@ ul.style-none {
   /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
   white-space: nowrap;
 }
+
+.sr-show-on-focus:focus {
+  position: absolute;
+  height: auto;
+  width: auto;
+  overflow: visible;
+  clip: auto;
+  clip-path: none;
+  white-space: normal;
+}
