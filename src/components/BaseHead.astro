@@ -5,6 +5,7 @@ import '../styles/global.css';
 import '../styles/resume.css';
 import { ViewTransitions } from 'astro:transitions';
 import type { OGPropsExtra } from '../types';
+import  SpeedInsights  from "@vercel/speed-insights/astro"
 
 
 type Props = {
@@ -120,3 +121,5 @@ const siteDescription = `${isPreview}${description}`;
 <meta name='twitter:title' content={siteTitle} />
 <meta name='twitter:description' content={siteDescription} />
 <meta name='twitter:image' content={new URL(image, Astro.url)} />
+
+<SpeedInsights />

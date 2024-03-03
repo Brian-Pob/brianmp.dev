@@ -9,5 +9,7 @@ export default defineConfig({
   site: 'https://brianmp.dev',
   integrations: [mdx(), sitemap()],
   output: "hybrid",
-  adapter: vercel()
+  adapter: vercel({
+    webAnalytics: { enabled: true }
+  })
 });
