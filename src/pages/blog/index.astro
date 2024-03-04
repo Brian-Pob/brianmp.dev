@@ -9,7 +9,8 @@ import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 
 const posts = await getCollection('blog', ({data}) => {
-  return data.status === 'published';
+
+  return data.status === 'published' || (import.meta.env.DEV && data.status === 'preview');
 })
 const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
