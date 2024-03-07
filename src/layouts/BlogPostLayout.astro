@@ -94,7 +94,7 @@ const { status, title, description, pubDate, updatedDate, heroImage, extra } =
   <body>
     <Header />
     {
-      status === 'preview' && (
+      (status === 'preview' || status === 'draft') && (
         <div class='prose' style="background-color:firebrick; color: white; text-align: center; font-size: 2rem;">
           <p>This post is under construction.</p>
         </div>
