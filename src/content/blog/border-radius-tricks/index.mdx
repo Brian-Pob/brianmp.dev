@@ -1,8 +1,8 @@
 ---
-status: "preview"
-title: "The Art of CSS War: 5 Secret Border Tricks to Help You Conquer CSS Battles!"
-description: "Lorem ipsum dolor sit amet"
-pubDate: "Mar 17 2024"
+status: 'preview'
+title: 'The Art of CSS War: 5 Secret Border Tricks for Conquering CSS Battles!'
+description: 'Lorem ipsum dolor sit amet'
+pubDate: 'Mar 17 2024'
 # heroImage: "/blog-placeholder-3.jpg"
 ---
 
@@ -15,7 +15,6 @@ pubDate: "Mar 17 2024"
 
 Before we get into the secret tricks, let's talk about how CSS borders work. A border is a line that surrounds an element. It can be set to different styles, colors, and widths. The border can be set to different sides of the element, or all sides at once.
 
-The border can be set to different styles, such as `solid`, `dotted`, `dashed`, `double`, `groove`, `ridge`, `inset`, `outset`, and `none`. The border can also be set to different colors, such as `red`, `blue`, `green`, `#ff0000`, `#00ff00`, `#0000ff`, `rgb(255, 0, 0)`, `rgba(0, 255, 0, 0.5)`, and `hsl(0, 100%, 50%)`. The border can also be set to different widths, such as `1px`, `2px`, `3px`, `4px`, `5px`, `10px`, `20px`, `50px`, and `100px`.
 
 You can also set the radius of the border to make it rounded. This is done by setting the `border-radius` property. You can set the `border-radius` to a single value, which will make all corners rounded, or you can set it to four values, which will make each corner rounded according to the value assigned.
 
@@ -116,8 +115,9 @@ We can also make a sort of "S" shape by setting different width and height value
 
 ## 3. The Blue and Red Pill 💊
 
-To make a pill shape, we need to set the border-radius to a really large number.
-In Kevin Powell's videos, he tends to use `100vw` but you can use any large number. I usually use `1000px` but it really doesn't matter.
+To make a pill shape, we need to set the border-radius to a **really** large number.
+In Kevin Powell's videos, he tends to use `100vw` but you can use any large number.
+I usually use `1000px` but it really doesn't matter.
 
 ```css
 .pill {
@@ -130,13 +130,17 @@ In Kevin Powell's videos, he tends to use `100vw` but you can use any large numb
 
 ## 4. It's a Trap(ezoid)! 🦑
 
-To make a trapezoid, we can set the height to 0 and then add a width. Then set the `border-width` to `0 100px 100px 100px`. This will make the top and bottom borders `0`, the left border `100px`, and the right border `100px`.
+If you go back to the example where we color individual borders, you can see that
+the borders create a trapezoid shape.
+
+To make a trapezoid, we need an element with no background color. Then we can set the height to 0 and then add a width. Then set the `border-color` of all sides except one to `transparent`.
+This will create a trapezoid shape.
 
 ```css
 .trapezoid {
   width: 200px;
   height: 0;
-  border-width: 0 100px 100px 100px;
+  border-width: 100px;
   border-style: solid;
   border-color: transparent transparent red transparent;
 }
@@ -187,3 +191,20 @@ Finally, we can make a triangle using a similar method to the trapezoid. We set 
   border-color: transparent transparent red transparent;
 }
 ```
+
+You can achieve a similar effect with the trapezoid by setting the `border-width` of the
+left and right borders to a large number.
+
+```css
+.triangle {
+  width: 0;
+  height: 0;
+  border-width: 100px 50px 0 50px;
+  border-style: solid;
+  border-color: red transparent transparent transparent;
+}
+```
+
+## 6. Bonus 
+
+The border can be set to different styles, such as `solid`, `dotted`, `dashed`, `double`, `groove`, `ridge`, `inset`, `outset`, and `none`. The border can also be set to different colors, such as `red`, `blue`, `green`, `#ff0000`, `#00ff00`, `#0000ff`, `rgb(255, 0, 0)`, `rgba(0, 255, 0, 0.5)`, and `hsl(0, 100%, 50%)`. The border can also be set to different widths, such as `1px`, `2px`, `3px`, `4px`, `5px`, `10px`, `20px`, `50px`, and `100px`.
