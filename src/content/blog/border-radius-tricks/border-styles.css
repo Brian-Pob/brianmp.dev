@@ -21,9 +21,11 @@
   }
 
   @media (prefers-color-scheme: dark) {
-    .example {
-      --ink: white !important;
-      --example-surface: black !important;
+
+    /* increase specificity */
+    div.example {
+      --ink: white;
+      --example-surface: black;
     }
   }
 
