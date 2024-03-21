@@ -20,10 +20,13 @@
     --example-surface: black;
   }
 
-  @media (prefers-color-scheme: dark) {
+  [data-theme='light'] .example {
+    --ink: black;
+    --example-surface: white;
+  }
 
-    /* increase specificity */
-    div.example {
+  @media (prefers-color-scheme: dark) {
+    .example {
       --ink: white;
       --example-surface: black;
     }
