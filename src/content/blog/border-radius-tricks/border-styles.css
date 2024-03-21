@@ -1,20 +1,7 @@
 @layer demo.styles {
-
-  [data-theme='dark'] .example {
-    --ink: white;
-    --surface: black;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .example {
-      --ink: white;
-      --surface: black;
-    }
-  }
-
   .example {
     --ink: black;
-    --surface: white;
+    --example-surface: white;
 
     width: 10rem;
     aspect-ratio: 2/1;
@@ -28,6 +15,17 @@
     text-wrap: nowrap;
   }
 
+  [data-theme='dark'] .example {
+    --ink: white;
+    --example-surface: black;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .example {
+      --ink: white !important;
+      --example-surface: black !important;
+    }
+  }
 
   .example-1 {
     border: 5px solid var(--ink);
@@ -37,7 +35,7 @@
     aspect-ratio: 1;
     border-radius: 50%;
     background-color: var(--ink);
-    color: var(--surface);
+    color: var(--example-surface);
   }
 
   .example-3 {
@@ -64,7 +62,7 @@
     border-radius: 0 50% 0 50%;
     rotate: -45deg;
     background-color: var(--ink);
-    color: var(--surface);
+    color: var(--example-surface);
     margin-block: 2rem;
   }
 
@@ -74,7 +72,7 @@
 
   .example-9 {
     background-color: var(--ink);
-    color: var(--surface);
+    color: var(--example-surface);
     border-radius: 1000px;
   }
 
@@ -92,7 +90,7 @@
     border-top-width: 30px;
     border-bottom-width: 60px;
     border-inline-width: 10px;
-    color: var(--surface);
+    color: var(--example-surface);
   }
 
   .example-12 {
@@ -100,7 +98,7 @@
     border-bottom-color: var(--ink);
     height: 0px;
     border-width: 30px;
-    color: var(--surface);
+    color: var(--example-surface);
     width: 6rem;
   }
 
@@ -120,7 +118,7 @@
     height: 0px;
     border-width: 30px;
     border-inline-width: 100px;
-    color: var(--surface);
+    color: var(--example-surface);
     width: 6rem;
   }
 
