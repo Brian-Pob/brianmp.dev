@@ -165,7 +165,11 @@ input {
   font-size: 16px;
 }
 
-button, input, optgroup, select, textarea {
+button,
+input,
+optgroup,
+select,
+textarea {
   font: inherit;
   margin: 0;
   padding: 0;
@@ -191,13 +195,16 @@ code {
 pre {
   padding: 1.5rem;
   border-radius: 8px;
+  font-size: clamp(.9rem, 2vw, 1.125rem);
 }
 
-pre>code {
+
+pre > code {
   all: unset;
 }
 
-blockquote, aside {
+blockquote,
+aside {
   --_side-color: var(--accent);
   border-left: 4px solid var(--_side-color);
   padding: 0 0 0 20px;

@@ -1,9 +1,18 @@
 @layer demo.styles {
+
+  [data-theme='dark'] .example {
+    --ink: white;
+    --surface: black;
+  }
+
   .example {
+    --ink: black;
+    --surface: white;
+
     width: 10rem;
     aspect-ratio: 2/1;
     border-width: 5px;
-    border-color: black;
+    border-color: var(--ink);
     border-style: solid;
     display: grid;
     place-content: center;
@@ -12,15 +21,16 @@
     text-wrap: nowrap;
   }
 
+
   .example-1 {
-    border: 5px solid black;
+    border: 5px solid var(--ink);
   }
 
   .example-2 {
     aspect-ratio: 1;
     border-radius: 50%;
-    background-color: black;
-    color: white;
+    background-color: var(--ink);
+    color: var(--surface);
   }
 
   .example-3 {
@@ -46,8 +56,8 @@
   .example-7 {
     border-radius: 0 50% 0 50%;
     rotate: -45deg;
-    background-color: black;
-    color: white;
+    background-color: var(--ink);
+    color: var(--surface);
     margin-block: 2rem;
   }
 
@@ -56,62 +66,54 @@
   }
 
   .example-9 {
-    background-color: black;
-    color: white;
+    background-color: var(--ink);
+    color: var(--surface);
     border-radius: 1000px;
   }
 
   .example-10 {
-    border-color: transparent transparent black transparent;
+    border-color: transparent transparent var(--ink) transparent;
     height: 0px;
     border-width: 30px;
-    color: black;
-  }
-
-  .example-10::before {
-    content: "Border Example #10"
+    color: var(--ink);
   }
 
   .example-11 {
     border-color: red;
-    border-bottom-color: black;
+    border-bottom-color: var(--ink);
     height: 0px;
     border-top-width: 30px;
     border-bottom-width: 60px;
     border-inline-width: 10px;
-    color: white;
+    color: var(--surface);
   }
 
   .example-12 {
     border-color: red;
-    border-bottom-color: black;
+    border-bottom-color: var(--ink);
     height: 0px;
     border-width: 30px;
-    color: white;
+    color: var(--surface);
     width: 6rem;
   }
 
   .example-13 {
     width: 0;
     border-color: red;
-    border-bottom-color: black;
+    border-bottom-color: var(--ink);
     height: 0px;
     border-width: 30px;
     color: transparent;
   }
 
-  .example-13::before {
-    content: "Border Example #13";
-    color: black;
-  }
 
   .example-14 {
     border-color: red;
-    border-bottom-color: black;
+    border-bottom-color: var(--ink);
     height: 0px;
     border-width: 30px;
     border-inline-width: 100px;
-    color: white;
+    color: var(--surface);
     width: 6rem;
   }
 
