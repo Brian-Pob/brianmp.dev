@@ -5,6 +5,13 @@
     --surface: black;
   }
 
+  @media (prefers-color-scheme: dark) {
+    .example {
+      --ink: white;
+      --surface: black;
+    }
+  }
+
   .example {
     --ink: black;
     --surface: white;
