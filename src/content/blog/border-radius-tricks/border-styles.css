@@ -1,0 +1,154 @@
+@layer demo.styles {
+  .example {
+    width: 10rem;
+    aspect-ratio: 2/1;
+    border-width: 5px;
+    border-color: black;
+    border-style: solid;
+    display: grid;
+    place-content: center;
+    position: relative;
+    margin: 2rem auto;
+    text-wrap: nowrap;
+  }
+
+  .example-1 {
+    border: 5px solid black;
+  }
+
+  .example-2 {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+  }
+
+  .example-3 {
+    aspect-ratio: 1;
+    border-radius: 50%;
+  }
+
+  .example-4 {
+    border-radius: 50%;
+  }
+
+  .example-5 {
+    aspect-ratio: 1;
+    rotate: 45deg;
+  }
+
+  .example-6 {
+    aspect-ratio: 1;
+    border-radius: 50% 0 50% 0;
+    rotate: 45deg;
+  }
+
+  .example-7 {
+    border-radius: 0 50% 0 50%;
+    rotate: -45deg;
+    background-color: black;
+    color: white;
+    margin-block: 2rem;
+  }
+
+  .example-8 {
+    border-radius: 1000px;
+  }
+
+  .example-9 {
+    background-color: black;
+    color: white;
+    border-radius: 1000px;
+  }
+
+  .example-10 {
+    border-color: transparent transparent black transparent;
+    height: 0px;
+    border-width: 30px;
+    color: black;
+  }
+
+  .example-10::before {
+    content: "Border Example #10"
+  }
+
+  .example-11 {
+    border-color: red;
+    border-bottom-color: black;
+    height: 0px;
+    border-top-width: 30px;
+    border-bottom-width: 60px;
+    border-inline-width: 10px;
+    color: white;
+  }
+
+  .example-12 {
+    border-color: red;
+    border-bottom-color: black;
+    height: 0px;
+    border-width: 30px;
+    color: white;
+    width: 6rem;
+  }
+
+  .example-13 {
+    width: 0;
+    border-color: red;
+    border-bottom-color: black;
+    height: 0px;
+    border-width: 30px;
+    color: transparent;
+  }
+
+  .example-13::before {
+    content: "Border Example #13";
+    color: black;
+  }
+
+  .example-14 {
+    border-color: red;
+    border-bottom-color: black;
+    height: 0px;
+    border-width: 30px;
+    border-inline-width: 100px;
+    color: white;
+    width: 6rem;
+  }
+
+  .example-15 {
+    border-style: dashed;
+  }
+
+  .example-16 {
+    border-style: dotted;
+  }
+
+  .example-17 {
+    border-style: double;
+  }
+
+  .example-18 {
+    border-style: groove;
+    border-width: 20px;
+  }
+
+  .example-19 {
+    border-style: ridge;
+    border-width: 20px;
+  }
+
+  .example-20 {
+    aspect-ratio: 1;
+    border-radius: 50% 0 50% 50%;
+  }
+
+  .example-21 {
+    aspect-ratio: 1;
+    border-radius: 20% 10px 50%;
+  }
+
+  .example-22 {
+    aspect-ratio: 1;
+    border-radius: 50% 50% 0 0;
+  }
+}

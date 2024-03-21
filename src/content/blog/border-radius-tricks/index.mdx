@@ -6,57 +6,67 @@ pubDate: 'Mar 20 2024'
 # heroImage: "/blog-placeholder-3.jpg"
 ---
 
+import './border-styles.css';
+
 ## TODO
 
 - [ ] Add hero image
 - [ ] Add codepen embeds
 
-## 0. How CSS Borders Work
+## 0. Setup
 
-Before we get into the secret tricks, let's talk about how CSS borders work. A border is a line that surrounds an element. It can be set to different styles, colors, and widths. The border can be set to different sides of the element, or all sides at once.
+Borders are a fundamental part of the HTML box model. In this article, we will explore some tips and tricks to achieve different shapes and effects by styling borders.
 
-You can also set the radius of the border to make it rounded. This is done by setting the `border-radius` property. You can set the `border-radius` to a single value, which will make all corners rounded, or you can set it to four values, which will make each corner rounded according to the value assigned.
+Below is a basic example of a div with a border. We will use this div to demonstrate the different border tricks. The `.example` class applies to all of the example divs in this article.
+
+Since all of the examples are part of the actual HTML content, you can inspect each of the elements to see the applied styles.
 
 ```css
-.circle {
-  /* single value */
-  border-radius: 10px;
+.example {
+  width: 10rem;
+  aspect-ratio: 2/1;
+  border-width: 5px;
+  border-color: black;
+  border-style: solid;
+  display: grid;
+  place-content: center;
+  position: relative;
+  margin: 2rem auto;
+  text-wrap: nowrap;
+}
 
-  /* four values */
-  border-radius: 10px 20px 30px 40px;
-
-  /* long form */
-  border-top-left-radius: 10px;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 30px;
-  border-bottom-left-radius: 40px;
+.example-1 {
+  border: 5px solid black;
 }
 ```
+
+<div class='example example-1'> Border Example #1 </div>
 
 ## 1. The Circle of Life ⭕️
 
 You can create a circle in CSS by setting the `border-radius` property to `50%`. If the element has the same height and width, this will make the element a perfect circle.
 
 ```css
-.circle {
-  width: 100px;
-  height: 100px;
+.example-2 {
+  aspect-ratio: 1;
   border-radius: 50%;
-  background-color: red;
+  background-color: black;
+  color: white;
 }
 ```
+
+<div class='example example-2'> Border Example #2 </div>
 
 For a hollow circle, you can keep the background color transparent and set a border. Changing the width and height will change the size of the circle while changing the border width will change the thickness.
 
 ```css
-.hollow-circle {
-  width: 100px;
-  height: 100px;
+.example-3 {
+  aspect-ratio: 1;
   border-radius: 50%;
-  border: 10px solid blue;
-  background-color: transparent; /* this can be omitted */
 }
 ```
+
+<div class='example example-3'> Border Example #3 </div>
 
 ## 2. The Eye of the Tiger 🐯
 
@@ -65,52 +75,49 @@ Now that we've set the `border-radius` property to `50%`, we can create a circle
 For the rounded ellipse, we can still use border radius 50%, but we need to set the width and height to different values. Here are some examples of a vertical and a horizontal oval:
 
 ```css
-.vertical-oval {
-  width: 100px;
-  height: 200px;
+.example-4 {
   border-radius: 50%;
-  background-color: blue;
-}
-
-.horizontal-oval {
-  width: 200px;
-  height: 100px;
-  border-radius: 50%;
-  background-color: green;
 }
 ```
 
-Now, for the ellipse with pointed ends, we need to use some trickery with rotation. First, we create a square, then we rotate it 45 degrees. This will make the square look like a diamond.
+<div class='example example-4'> Border Example #4 </div>
+
+Earlier, I mentioned that we can target individual borders. We can also target the border corners individually. So, to make ellipse with pointed ends, we need to use some trickery with rotation. First, we create a square, then we rotate it 45 degrees. This will make the square look like a diamond.
+
+```css
+.example-5 {
+  aspect-ratio: 1;
+  rotate: 45deg;
+}
+```
+
+<div class='example example-5'> Border Example #5 </div>
 
 This is where the magic happens. We set the `border-radius` property to `50%`, **but** for only two of the corners. This will make the diamond look like an ellipse with pointed ends.
 
 ```css
-.ellipse {
-  width: 100px;
-  height: 100px;
-  transform: rotate(45deg);
-
-  border-top-left-radius: 50%;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 50%;
-  border-bottom-left-radius: 0;
-  /* short form */
-  /* border-radius: 50% 0 50% 0; */
-  background-color: yellow;
+.example-6 {
+  aspect-ratio: 1;
+  border-radius: 50% 0 50% 0;
+  rotate: 45deg;
 }
 ```
+
+<div class='example example-6'> Border Example #6 </div>
 
 We can also make a sort of "S" shape by setting different width and height values and using the same rotation and border-radius trick.
 
 ```css
-.s-shape {
-  width: 200px;
-  height: 100px;
-  transform: rotate(45deg);
-  border-radius: 50% 0 50% 0;
-  background-color: purple;
+.example-7 {
+  border-radius: 0 50% 0 50%;
+  rotate: -45deg;
+  background-color: black;
+  color: white;
+  margin-block: 2rem;
 }
 ```
+
+<div class='example example-7'> Border Example #7 </div>
 
 ## 3. The Blue and Red Pill 💊
 
@@ -119,13 +126,19 @@ In Kevin Powell's videos, he tends to use `100vw` but you can use any large numb
 I usually use `1000px` but it really doesn't matter.
 
 ```css
-.pill {
-  width: 200px;
-  height: 100px;
+.example-8 {
   border-radius: 1000px;
-  background-color: pink;
+}
+.example-9 {
+  background-color: black;
+  color: white;
+  border-radius: 1000px;
 }
 ```
+
+<div class='example example-8'> Border Example #8 </div>
+
+<div class='example example-9'> Border Example #9 </div>
 
 ## 4. It's a Trap(ezoid)! 🦑
 
@@ -136,36 +149,42 @@ To make a trapezoid, we need an element with no background color. Then we can se
 This will create a trapezoid shape.
 
 ```css
-.trapezoid {
-  width: 200px;
-  height: 0;
-  border-width: 100px;
-  border-style: solid;
-  border-color: transparent transparent red transparent;
+.example-10 {
+  border-color: transparent transparent black transparent;
+  height: 0px;
+  border-width: 30px;
+  color: white;
 }
 ```
+
+<div class='example example-10'> Border Example #10 </div>
 
 You can manipulate the "height" of the trapezoid by changing the `border-width` values. For example, if you set the `border-width` to `0 50px 100px 50px`, you will get a trapezoid with a smaller top border.
 
 ```css
-.trapezoid {
-  width: 200px;
-  height: 0;
-  border-width: 0 50px 100px 50px;
-  border-style: solid;
-  border-color: transparent transparent red transparent;
+.example-11 {
+  border-color: red;
+  border-bottom-color: black;
+  height: 0px;
+  border-top-width: 30px;
+  border-bottom-width: 60px;
+  border-inline-width: 10px;
+  color: white;
 }
 ```
+
+<div class='example example-11'> Border Example #11 </div>
 
 Alternatively, the width of the trapezoid can be manipulated by changing the `width` value of the element. For example, if you set the `width` to `100px`, you will get a trapezoid with a smaller width.
 
 ```css
-.smaller-trapezoid {
-  width: 100px;
-  height: 0;
-  border-width: 0 50px 100px 50px;
-  border-style: solid;
-  border-color: transparent transparent red transparent;
+.example-12 {
+  border-color: red;
+  border-bottom-color: black;
+  height: 0px;
+  border-width: 30px;
+  color: white;
+  width: 6rem;
 }
 
 .bigger-trapezoid {
@@ -177,33 +196,67 @@ Alternatively, the width of the trapezoid can be manipulated by changing the `wi
 }
 ```
 
+<div class='example example-12'> Border Example #12 </div>
+
 ## 5. The Pyramid of Doom ⚠️
 
 Finally, we can make a triangle using a similar method to the trapezoid. We set the height to 0 but we also set the width to 0. This essentially causes the smaller end of the trapezoid to converge to a single point, making a triangle.
 
 ```css
-.triangle {
+.example-13 {
   width: 0;
-  height: 0;
-  border-width: 0 50px 100px 50px;
-  border-style: solid;
-  border-color: transparent transparent red transparent;
+  border-color: red;
+  border-bottom-color: black;
+  height: 0px;
+  border-width: 30px;
+  color: white;
 }
 ```
+
+<div class='example example-13'> Border Example #13 </div>
 
 You can achieve a similar effect with the trapezoid by setting the `border-width` of the
 left and right borders to a large number.
 
 ```css
-.triangle {
-  width: 0;
-  height: 0;
-  border-width: 100px 50px 0 50px;
-  border-style: solid;
-  border-color: red transparent transparent transparent;
+.example-14 {
+  border-color: red;
+  border-bottom-color: black;
+  height: 0px;
+  border-width: 30px;
+  border-inline-width: 100px;
+  color: white;
+  width: 6rem;
 }
 ```
 
+<div class='example example-14'> Border Example #14 </div>
+
 ## 6. Bonus
 
-The border can be set to different styles, such as `solid`, `dotted`, `dashed`, `double`, `groove`, `ridge`, `inset`, `outset`, and `none`. The border can also be set to different colors, such as `red`, `blue`, `green`, `#ff0000`, `#00ff00`, `#0000ff`, `rgb(255, 0, 0)`, `rgba(0, 255, 0, 0.5)`, and `hsl(0, 100%, 50%)`. The border can also be set to different widths, such as `1px`, `2px`, `3px`, `4px`, `5px`, `10px`, `20px`, `50px`, and `100px`.
+Here are 8 more examples of border-radius tricks that you can use to create interesting shapes.
+
+<div class='example example-15'> Border Example #15 </div>
+<div class='example example-16'> Border Example #16 </div>
+<div class='example example-17'> Border Example #17 </div>
+<div class='example example-18'> Border Example #18 </div>
+<div class='example example-19'> Border Example #19 </div>
+<div class='example example-20'> Border Example #20 </div>
+<div class='example example-21'> Border Example #21 </div>
+<div class='example example-22'> Border Example #22 </div>
+
+## Conclusion
+
+For examples on all of these border radius tricks, check out this CodePen that I made for this article:
+
+<p
+  class='codepen'
+  data-height='300'
+  data-default-tab='css,result'
+  data-slug-hash='GRLNaGG'
+  data-user='brian-pob'
+  style='height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;'
+>
+
+</p>
+<script async src='https://cpwebassets.codepen.io/assets/embed/ei.js'></script>
