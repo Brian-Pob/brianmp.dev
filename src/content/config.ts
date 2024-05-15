@@ -3,6 +3,7 @@ import type { OGPropsExtra } from '../types';
 
 const blog = defineCollection({
   // Type-check frontmatter using a schema
+  type: 'content',
   schema: ({ image }) =>
     z.object({
       status: z.enum(['draft', 'preview', 'published']),
