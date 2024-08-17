@@ -122,4 +122,17 @@ const siteDescription = `${isPreview}${description}`;
 <meta name='twitter:description' content={siteDescription} />
 <meta name='twitter:image' content={new URL(image, Astro.url)} />
 
+<!-- CSP -->
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'self' *.brianmp.dev cdn.vercel-insights.com; 
+  img-src 'self' *.brianmp.dev media.tenor.com res.cloudinary.com; 
+  script-src 'self' *.brianmp.dev *.codepen.io www.youtube.com tenor.com 'unsafe-inline' 'unsafe-eval' va.vercel-scripts.com cdn.vercel-insights.com;
+  style-src 'self' *.brianmp.dev 'unsafe-inline'; 
+  frame-src www.youtube.com www.youtube-nocookie.com codepen.io tenor.com cdn.vercel-insights.com; 
+  media-src 'self' *.brianmp.dev media.tenor.com res.cloudinary.com;
+  srcipt-src-elem 'self' *.brianmp.dev *.codepen.io www.youtube.com tenor.com 'unsafe-inline' 'unsafe-eval' va.vercel-scripts.com cdn.vercel-insights.com vercel.live;
+">
+
+
+
 <SpeedInsights />
