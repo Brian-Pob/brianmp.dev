@@ -1,33 +1,44 @@
 ---
-status: 'preview'
-title: 'Why I Love Web Dev'
+status: "preview"
+title: "Why I Love Web Dev"
 description: "Web dev and JavaScript are not everyone's cup of tea. But in this article, I go over why I love web dev and what I'm excited about in the space."
-pubDate: 'Jan 19, 2025'
-heroImage: './blog-placeholder-3.jpg'
-
+pubDate: "Jan 19, 2025"
+heroImage: "./lovewebdev.png"
 ---
+
+import Aside from "src/components/Aside.astro";
+
 A lot of people say that they think web dev (specifically JavaScript land)
 is super bloated. "There's a new JavaScript framework every week!" is something
 you'll hear a lot from people who do or do not work with JS technologies. And
 I think that's a completely valid statement.
 
 Yes, in JavaScript there are so many ways to accomplish the same task.
+
 - You need a JS framework? You've got **React, Vue, Angular**...
 - Oh, you want something newer? There's also **Solid, Magneton, Svelte, Astro, Qwik...**
 - Ah, you need something that's fullstack. **How about NextJS, Nuxt, Remix, Dedenne...**
 - Cool, now you need to style it. You could use **SASS**, or maybe **Styled Components**
-if you want CSS-in-JS. Or I heard **Tailwind** is all the rage!
+  if you want CSS-in-JS. Or I heard **Tailwind** is all the rage!
 - But who wants to write the styles themselves? Just use a component library!
-There's **shadcn-ui, Bootstrap, Material UI...**
+  There's **shadcn-ui, Bootstrap, Material UI...**
 
 And these barely scratch the surface of the ever-growing list of web dev
-technologies. And two of them were Pokemon! XD
+technologies. Btw two of them were Pokemon. <span aria-hidden="true"> *XD* </span>
 
-"Wait, Brian, isn't this article called 'Why I Love Web Dev?'"
+import PBC from "./PBC_lg.png";
 
-Yes, dear reader. It is. And the ever-growing list of technologies is a key
-part of why I love this field.
+<img
+	{...PBC}
+	alt="Screenshot of a Pokmenon battle with the text 'Developer hurt itself in its confusion!'"
+	width="500"
+	height="300"
+/>
 
+> "Wait, Brian, isn't this article called 'Why I Love Web Dev?'"
+
+Yes, dear reader. It is. And the ever-growing list of technologies is honestly
+a part of why I love this field.
 
 I love learning. I love filling my head with knowledge. Struggling to grasp
 something at first but then building the confidence and skill to do something
@@ -35,21 +46,39 @@ effecively. And in web dev there's just always something new to learn. Always
 something new to try and get your hands dirty with.
 
 Now, to other people this sounds like a nightmare. And that's totally fine!
+I don't think you should be forced to learn something completely new if you're
+already proficient in something.
+
 There's nothing wrong with sticking with what you know. Just use what gets
-the job done. What gets your product shipped. What makes your client happy.
+the job done, what gets your product shipped, or what makes your client happy!
+
+import newframework from "./newframework.jpg";
+
+<img {...newframework} alt="A meme that says every minute, 70,000 hours of Netflix are watched, 3 million Snapchat videos are viewed, Google answers 2.4 million questions, and a new JavaScript framework emerges." width="500"/>
 
 Me personally, I just like the freshness of this space. Granted, I am a
 relatively new developer. I started coding in 2016 in my first year of uni
-and my very first taste of web dev was in 2018 with Node, express, and ejs.
-So maybe I'm just too naïve. But the addition of new
-packages and frameworks and technologies to me just signifies that there's
-so many people passionate about web dev too! So many people striving to make
-web dev better in their own way.
+and my very first taste of web dev was in 2018 with Node, express, and
+[ejs](https://ejs.co/).
+So maybe I'm just too naïve. <span aria-hidden="true">¯\\_(ツ)_/¯</span>
 
-I know that for some of you out there, everything I listed in this article may
-be the reason you wouldn't touch JS-land with a 10-foot pole.
+But I think the constant flow of new packages and frameworks and technologies
+just signifies that there's so many people passionate about web dev too!
+So many people striving to make web dev better in their own way.
+
+A rising tide lifts all boats. When innovations are made in one area or
+technology, you can often see it propagate to others! For example, [signals](https://docs.solidjs.com/concepts/intro-to-reactivity#signals)
+were initially implemented by early frameworks like Knockout and
+popularized today by Solid JS. Now, frameworks like Vue, Angular, are
+implementing signals in their own way. There's even a [Stage 1 TC39 Proposal](https://github.com/tc39/proposal-signals)
+to add signals directly to JavaScript!
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JvE_xQVIFF0?si=VofF3RtIN2ra4ivf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+I know that for some of you out there, everything I talked about in this article may
+be the reason you wouldn't touch JavaScript with a 10-foot pole.
 And I don't blame you!
 
 I still have a lot to learn as a developer and software engineer. Still a lot
-of room for me to grow. But I like it here in webdev-land, and I don't plan on
+of room for me to grow. But I like it here in JS-land, and I don't plan on
 leaving any time soon!
