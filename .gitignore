@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # vercel files
 .vercel
+
+# don't commit drafts
+*_draft_*
