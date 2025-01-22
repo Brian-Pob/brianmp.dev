@@ -3,7 +3,7 @@
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
 import '../styles/resume.css';
-import { ViewTransitions } from 'astro:transitions';
+import { ClientRouter } from 'astro:transitions';
 import type { OGPropsExtra } from '../types';
 import  SpeedInsights  from "@vercel/speed-insights/astro"
 
@@ -52,7 +52,7 @@ const siteDescription = `${isPreview}${description}`;
 <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
 <meta name='generator' content={Astro.generator} />
 
-<ViewTransitions />
+<ClientRouter />
 
 <!-- Font preloads -->
 <link
