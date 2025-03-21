@@ -21,6 +21,7 @@
     "@vercel/speed-insights": "^1.0.12",
     "astro": "^5.5.3",
     "autoprefixer": "^10.4.20",
+    "caniuse-lite": "^1.0.30001706",
     "cssnano": "^6.1.2",
     "postcss-preset-env": "^9.6.0",
     "sass": "^1.77.8",
