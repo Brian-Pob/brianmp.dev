@@ -1,27 +1,23 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
-import SocialLinks from './SocialLinks.astro';
+import HeaderLink from "./HeaderLink.astro";
+import { SITE_TITLE } from "../consts";
 ---
 
 <header transition:animate='none'>
-  <a href='#main-content' class='sr-only sr-show-on-focus' id="skip-link" >Skip to main content</a>
+  <a href='#main-content' class='sr-only sr-show-on-focus' id='skip-link'
+    >Skip to main content</a
+  >
   <nav>
     <h2><a href='/'>{SITE_TITLE}</a></h2>
-    <div class='internal-links'>
-      <ul class='style-none'>
-        <li><HeaderLink href='/'>Home</HeaderLink></li>
-        <li><HeaderLink href='/blog'>Blog</HeaderLink></li>
-        <li><HeaderLink href='/resume'>Resume</HeaderLink></li>
-        <li><HeaderLink href='/about'>About</HeaderLink></li>
-      </ul>
-    </div>
-    <div class='social-links'>
-      <SocialLinks />
-    </div>
+
+    <ul class='ul-style-none internal-links'>
+      <li><HeaderLink href='/'>Home</HeaderLink></li>
+      <li><HeaderLink href='/blog'>Blog</HeaderLink></li>
+      <li><HeaderLink href='/resume'>Resume</HeaderLink></li>
+      <li><HeaderLink href='/about'>About</HeaderLink></li>
+    </ul>
   </nav>
 </header>
-
 
 <style>
   #skip-link {
@@ -35,7 +31,6 @@ import SocialLinks from './SocialLinks.astro';
     margin: 0;
     padding: 0 1rem;
     background: var(--surface);
-    box-shadow: 0 2px 8px rgba(var(--black), 5%);
   }
   h2 {
     margin: 0;
@@ -53,7 +48,7 @@ import SocialLinks from './SocialLinks.astro';
   }
 
   /* Width for folded Galaxy Fold */
-  @media (max-width: 375px) {
+  @media (width < 375px) {
     nav {
       flex-direction: column;
       justify-content: center;
@@ -63,6 +58,7 @@ import SocialLinks from './SocialLinks.astro';
       width: 100%;
       display: flex;
       justify-content: space-evenly;
+      gap: 0;
     }
 
     h2 {
@@ -73,6 +69,7 @@ import SocialLinks from './SocialLinks.astro';
     margin: 1rem 0.5rem;
     color: var(--black);
     border-bottom: 4px solid transparent;
+    border-radius: var(--drawn-underline-border);
     text-decoration: none;
   }
   nav a.active {
@@ -88,10 +85,7 @@ import SocialLinks from './SocialLinks.astro';
     display: flex;
     gap: 1rem;
   }
-  @media (max-width: 720px) {
-    .social-links {
-      display: none;
-    }
+  @media (width < 720px) {
     ul {
       overflow-x: scroll;
     }

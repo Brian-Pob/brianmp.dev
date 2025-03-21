@@ -1,12 +1,12 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
-import '../styles/global.css';
-import '../styles/resume.css';
-import { ViewTransitions } from 'astro:transitions';
-import type { OGPropsExtra } from '../types';
-import  SpeedInsights  from "@vercel/speed-insights/astro"
-
+import "../styles/global.css";
+import "../styles/utilities.css";
+import "../styles/resume.css";
+import { ClientRouter } from "astro:transitions";
+import type { OGPropsExtra } from "../types";
+import SpeedInsights from "@vercel/speed-insights/astro";
 
 type Props = {
   status?: "draft" | "preview" | "published";
@@ -18,7 +18,6 @@ type Props = {
   extra?: OGPropsExtra[];
 };
 
-
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 let {
@@ -26,52 +25,38 @@ let {
   title,
   description,
   image,
-  contentType = 'website',
+  contentType = "website",
   extra = [],
 } = Astro.props;
 
-image = image ?? '/og-banner-no-tag.png';
+image = image ?? "/og-banner-no-tag.png";
 
 // const isDraft = status === 'preview' ? '[PREVIEW]' : '';
-let isPreview = '';
+let isPreview = "";
 
-if (status !== undefined && status === 'preview') {
-  isPreview = '[PREVIEW] ';
+if (status !== undefined && status === "preview") {
+  isPreview = "[PREVIEW] ";
 }
 
 const siteTitle = `${isPreview}${title}`;
 const siteDescription = `${isPreview}${description}`;
 ---
 
-
 <!-- Global Metadata -->
 <meta charset='utf-8' />
 <meta name='viewport' content='width=device-width,initial-scale=1' />
 <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+<link rel='icon' href='/favicon.ico' sizes='any' />
+<link rel='apple-touch-icon' href='/apple-touch-icon.png' />
 <meta name='generator' content={Astro.generator} />
 
-<ViewTransitions />
+<!-- Astro View Transitions Router -->
+<ClientRouter />
 
 <!-- Font preloads -->
 <link
   rel='preload'
-  href='/fonts/atkinson_regular.woff'
-  as='font'
-  type='font/woff'
-  crossorigin
-/>
-<link
-  rel='preload'
-  href='/fonts/atkinson_bold.woff'
-  as='font'
-  type='font/woff'
-  crossorigin
-/>
-<link
-  rel='preload'
-  href='/fonts/space_grotesk.ttf'
+  href='/fonts/ShortStack-Regular.ttf'
   as='font'
   type='font/ttf'
   crossorigin
@@ -123,16 +108,17 @@ const siteDescription = `${isPreview}${description}`;
 <meta name='twitter:image' content={new URL(image, Astro.url)} />
 
 <!-- CSP -->
-<meta http-equiv="Content-Security-Policy" content="
+<meta
+  http-equiv='Content-Security-Policy'
+  content="
   default-src 'self' *.brianmp.dev cdn.vercel-insights.com; 
   img-src 'self' *.brianmp.dev media.tenor.com res.cloudinary.com; 
-  script-src 'self' *.brianmp.dev *.codepen.io www.youtube.com tenor.com 'unsafe-inline' 'unsafe-eval' va.vercel-scripts.com cdn.vercel-insights.com;
+  script-src 'self' *.brianmp.dev *.codepen.io www.youtube.com tenor.com public.codepenassets.com 'unsafe-inline' 'unsafe-eval' va.vercel-scripts.com cdn.vercel-insights.com;
   style-src 'self' *.brianmp.dev 'unsafe-inline'; 
   frame-src www.youtube.com www.youtube-nocookie.com codepen.io tenor.com cdn.vercel-insights.com; 
   media-src 'self' *.brianmp.dev media.tenor.com res.cloudinary.com;
-  srcipt-src-elem 'self' *.brianmp.dev *.codepen.io www.youtube.com tenor.com 'unsafe-inline' 'unsafe-eval' va.vercel-scripts.com cdn.vercel-insights.com vercel.live;
-">
-
-
+  script-src-elem 'self' *.brianmp.dev *.codepen.io www.youtube.com tenor.com 'unsafe-inline' 'unsafe-eval' va.vercel-scripts.com cdn.vercel-insights.com vercel.live public.codepenassets.com;
+"
+/>
 
 <SpeedInsights />

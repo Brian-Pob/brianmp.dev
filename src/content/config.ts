@@ -1,12 +1,12 @@
-import { defineCollection, z } from 'astro:content';
-import type { OGPropsExtra } from '../types';
+import { defineCollection, z } from "astro:content";
+import type { OGPropsExtra } from "../types";
 
 const blog = defineCollection({
   // Type-check frontmatter using a schema
-  type: 'content',
+  type: "content",
   schema: ({ image }) =>
     z.object({
-      status: z.enum(['draft', 'preview', 'published']),
+      status: z.enum(["draft", "preview", "published"]),
       title: z.string(),
       description: z.string(),
       // Transform string to Date object
