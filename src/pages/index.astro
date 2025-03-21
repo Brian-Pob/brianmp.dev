@@ -14,48 +14,7 @@ import resumeImage from "../assets/resume.png";
 <BaseLayout>
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <style>
-      video,
-      img {
-        margin: 0 auto;
-        border: 5px solid;
-        border-radius: 3px;
-        border-color: var(--accent);
-        display: block;
-      }
 
-      video.no-border {
-        border: none;
-      }
-
-      video {
-        max-width: 95%;
-      }
-
-      img + p,
-      video + p {
-        text-align: center;
-        font-size: 0.9rem;
-        font-style: italic;
-      }
-
-      /* :has(> video), */
-      .video-container {
-        width: 100%;
-        text-align: center;
-        overflow: hidden;
-      }
-
-      /* :has(> video) > *, */
-      .video-container > * {
-        display: block;
-      }
-
-      .resume-container {
-        /* display: flex;
-        align-items: center; */
-      }
-    </style>
   </head>
   <body>
     <Header title={SITE_TITLE} />
@@ -162,6 +121,27 @@ import resumeImage from "../assets/resume.png";
           <p>Click to download resume</p>
         </a>
       </div>
+
+      <div class='resume-container'>
+        <p>
+          My resume is also available on the
+          <a href='/resume'>Resume</a>
+          page. The page is still under development but the resume is up to date!
+        </p>
+        <a href='/BrianPoblete_resume.pdf' download>
+          <Image
+            class='resume-img'
+            src={resumeImage}
+            alt='Brian Poblete - Resume Download'
+            width='500'
+            height='647'
+            loading='eager'
+          />
+          <p>Click to download resume</p>
+        </a>
+      </div>
+
+
       <p>
         In the meantime, please check out this <a
           href='https://solid-mentor.netlify.app'>other project</a
@@ -196,3 +176,56 @@ import resumeImage from "../assets/resume.png";
     <Footer />
   </body>
 </BaseLayout>
+
+<style>
+
+
+:is(video, img) {
+  margin: 0 auto;
+  border: 5px solid;
+  border-radius: var(--radius-drawn-1);
+  border-color: var(--accent);
+  display: block;
+}
+
+:is(video, img):nth-of-type(2n) {
+  border-radius: var(--radius-drawn-2);
+}
+
+:is(video, img):nth-of-type(3n) {
+  border-radius: var(--radius-drawn-3);
+}
+
+
+video.no-border {
+  border: none;
+}
+
+video {
+  max-width: 95%;
+}
+
+img + p,
+video + p {
+  text-align: center;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* :has(> video), */
+.video-container {
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* :has(> video) > *, */
+.video-container > * {
+  display: block;
+}
+
+.resume-container {
+  /* display: flex;
+  align-items: center; */
+}
+</style>
