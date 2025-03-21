@@ -44,7 +44,7 @@ import resumeImage from "../assets/resume.png";
           development but I'm no slouch with backend tech as well.
         </p>
         <ul>
-          <li>Findmine work</li>
+          <li>Venerate work</li>
           <li>Maglab work</li>
           <li>
             <a href='#'>See more...</a>
@@ -111,7 +111,7 @@ import resumeImage from "../assets/resume.png";
         </p>
         <a href='/BrianPoblete_resume.pdf' download>
           <Image
-            class='resume-img'
+            class='resume-img '
             src={resumeImage}
             alt='Brian Poblete - Resume Download'
             width='500'
@@ -121,26 +121,6 @@ import resumeImage from "../assets/resume.png";
           <p>Click to download resume</p>
         </a>
       </div>
-
-      <div class='resume-container'>
-        <p>
-          My resume is also available on the
-          <a href='/resume'>Resume</a>
-          page. The page is still under development but the resume is up to date!
-        </p>
-        <a href='/BrianPoblete_resume.pdf' download>
-          <Image
-            class='resume-img'
-            src={resumeImage}
-            alt='Brian Poblete - Resume Download'
-            width='500'
-            height='647'
-            loading='eager'
-          />
-          <p>Click to download resume</p>
-        </a>
-      </div>
-
 
       <p>
         In the meantime, please check out this <a
@@ -180,22 +160,12 @@ import resumeImage from "../assets/resume.png";
 <style>
 
 
-:is(video, img) {
+:where(video, img) {
   margin: 0 auto;
   border: 5px solid;
-  border-radius: var(--radius-drawn-1);
   border-color: var(--accent);
   display: block;
 }
-
-:is(video, img):nth-of-type(2n) {
-  border-radius: var(--radius-drawn-2);
-}
-
-:is(video, img):nth-of-type(3n) {
-  border-radius: var(--radius-drawn-3);
-}
-
 
 video.no-border {
   border: none;

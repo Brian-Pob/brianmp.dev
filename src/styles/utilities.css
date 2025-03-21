@@ -29,3 +29,23 @@
   clip-path: none;
   white-space: normal;
 }
+
+.drawn-1 {
+  border-radius: var(--radius-drawn-1);
+}
+
+.drawn-2 {
+  border-radius: var(--radius-drawn-2);
+}
+
+.drawn-3 {
+  border-radius: var(--radius-drawn-3);
+}
+
+.drawn-4 {
+  border-radius: var(--radius-drawn-4);
+}
+
+.drawn-5 {
+  border-radius: var(--radius-drawn-5);
+}

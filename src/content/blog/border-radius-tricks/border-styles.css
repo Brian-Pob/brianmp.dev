@@ -11,8 +11,9 @@
     display: grid;
     place-content: center;
     position: relative;
-    margin: 2rem auto;
+    margin: var(--size-7) auto;
     text-wrap: nowrap;
+    font-size: var(--font-size-2);
   }
 
   [data-theme="dark"] .example {
@@ -68,7 +69,7 @@
     rotate: -45deg;
     background-color: var(--ink);
     color: var(--example-surface);
-    margin-block: 2rem;
+    margin-block: var(--size-7);
   }
 
   .example-8 {

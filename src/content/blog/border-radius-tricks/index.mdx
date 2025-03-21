@@ -28,7 +28,7 @@ Since all of the examples are part of the actual HTML content, you can inspect e
   display: grid;
   place-content: center;
   position: relative;
-  margin: 2rem auto;
+  margin: var(--size-7) auto;
   text-wrap: nowrap;
 }
 
@@ -39,7 +39,7 @@ Since all of the examples are part of the actual HTML content, you can inspect e
 
 <div class='example example-1'> Border Example #1 </div>
 
-## 1. The Circle of Life ⭕️
+## 1. Circles
 
 You can create a circle in CSS by setting the `border-radius` property to `50%`. If the element has the same height and width, this will make the element a perfect circle.
 
@@ -65,7 +65,7 @@ For a hollow circle, you can keep the background color transparent and set a bor
 
 <div class='example example-3'> Border Example #3 </div>
 
-## 2. The Eye of the Tiger 🐯
+## 2. Eye Shapes
 
 Now that we've set the `border-radius` property to `50%`, we can create a circle. But what if we want to create an ellipse? The two main types of ellipses we can make are an oval shape with rounded ends and an ellipse with pointed ends.
 
@@ -108,13 +108,13 @@ We can also make a sort of "S" shape by setting different width and height value
 .example-7 {
   border-radius: 0 50% 0 50%;
   rotate: -45deg;
-  margin-block: 2rem;
+  margin-block: var(--size-7);
 }
 ```
 
 <div class='example example-7'> Border Example #7 </div>
 
-## 3. The Blue and Red Pill 💊
+## 3. Pill Shapes
 
 To make a pill shape, we need to set the border-radius to a **really** large number.
 In Kevin Powell's videos, he tends to use `100vw` but you can use any large number.
@@ -131,7 +131,7 @@ I usually use `1000px` but it really doesn't matter.
 
 <div class='example example-9'> Border Example #9 </div>
 
-## 4. It's a Trap(ezoid)! 🦑
+## 4. Trapezoids
 
 If you go back to the example where we color individual borders, you can see that
 the borders create a trapezoid shape.
@@ -190,7 +190,7 @@ Alternatively, the width of the trapezoid can be manipulated by changing the `wi
 
 <div class='example example-12'></div>
 
-## 5. The Pyramid of Doom ⚠️
+## 5. Triangles
 
 Finally, we can make a triangle using a similar method to the trapezoid. We set the height to 0 but we also set the width to 0. This essentially causes the smaller end of the trapezoid to converge to a single point, making a triangle.
 
