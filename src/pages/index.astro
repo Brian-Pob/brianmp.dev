@@ -1,20 +1,18 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import BaseHead from "@/BaseHead.astro";
-import Header from "@/Header.astro";
-import Footer from "@/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import { Image } from "astro:assets";
-
-import ageCalcWebM from "/age-calculator-sm.webm";
+import BaseHead from "@/BaseHead.astro";
+import Footer from "@/Footer.astro";
+import Header from "@/Header.astro";
 import ageCalcMP4 from "/age-calculator-sm.mp4";
+import ageCalcWebM from "/age-calculator-sm.webm";
 import resumeImage from "../assets/resume.png";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-
   </head>
   <body>
     <Header title={SITE_TITLE} />
@@ -111,7 +109,7 @@ import resumeImage from "../assets/resume.png";
         </p>
         <a href='/BrianPoblete_resume.pdf' download>
           <Image
-            class='resume-img '
+            class='resume-img'
             src={resumeImage}
             alt='Brian Poblete - Resume Download'
             width='500'
@@ -158,44 +156,42 @@ import resumeImage from "../assets/resume.png";
 </BaseLayout>
 
 <style>
+  :where(video, img) {
+    margin: 0 auto;
+    border: 5px solid;
+    border-color: var(--accent);
+    display: block;
+  }
 
+  video.no-border {
+    border: none;
+  }
 
-:where(video, img) {
-  margin: 0 auto;
-  border: 5px solid;
-  border-color: var(--accent);
-  display: block;
-}
+  video {
+    max-width: 95%;
+  }
 
-video.no-border {
-  border: none;
-}
+  img + p,
+  video + p {
+    text-align: center;
+    font-size: 0.9rem;
+    font-style: italic;
+  }
 
-video {
-  max-width: 95%;
-}
+  /* :has(> video), */
+  .video-container {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+  }
 
-img + p,
-video + p {
-  text-align: center;
-  font-size: 0.9rem;
-  font-style: italic;
-}
+  /* :has(> video) > *, */
+  .video-container > * {
+    display: block;
+  }
 
-/* :has(> video), */
-.video-container {
-  width: 100%;
-  text-align: center;
-  overflow: hidden;
-}
-
-/* :has(> video) > *, */
-.video-container > * {
-  display: block;
-}
-
-.resume-container {
-  /* display: flex;
+  .resume-container {
+    /* display: flex;
   align-items: center; */
-}
+  }
 </style>

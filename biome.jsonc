@@ -1,11 +1,15 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.2.5/schema.json",
   "formatter": {
     "enabled": true,
     "indentStyle": "space"
   },
-  "organizeImports": {
-    "enabled": true
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
   },
   "linter": {
     "enabled": true,
@@ -17,5 +21,15 @@
     "formatter": {
       "quoteStyle": "double"
     }
-  }
+  },
+  "overrides": [
+    {
+      "includes": [
+        "**/*.astro"
+      ],
+      "linter": {
+        "enabled": false
+      }
+    }
+  ]
 }
