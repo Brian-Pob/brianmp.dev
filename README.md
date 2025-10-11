@@ -1,6 +1,6 @@
 # Personal Website
 
-Hi! My name is Brian. I'm a Frontend Engineer currently based near Seattle, WA.
+Hi! My name is Brian. I'm a Front End Engineer for Amazon - FinAuto currently based in Dallas, TX.
 I have a genuine passion for web development and UX and this website is how I
 would like to demonstrate my passion.
 
