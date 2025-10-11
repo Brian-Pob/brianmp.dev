@@ -1,12 +1,12 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
-import '../styles/global.css';
-import '../styles/resume.css';
-import { ViewTransitions } from 'astro:transitions';
-import type { OGPropsExtra } from '../types';
-import  SpeedInsights  from "@vercel/speed-insights/astro"
-
+import "../styles/global.css";
+import "../styles/utilities.css";
+import "../styles/resume.css";
+import { ClientRouter } from "astro:transitions";
+import SpeedInsights from "@vercel/speed-insights/astro";
+import type { OGPropsExtra } from "../types";
 
 type Props = {
   status?: "draft" | "preview" | "published";
@@ -50,7 +50,8 @@ const siteDescription = `${isPreview}${description}`;
 <link rel='apple-touch-icon' href='/apple-touch-icon.png' />
 <meta name='generator' content={Astro.generator} />
 
-<ViewTransitions />
+<!-- Astro View Transitions Router -->
+<ClientRouter />
 
 <!-- Font preloads -->
 <link
