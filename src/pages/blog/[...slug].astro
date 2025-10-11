@@ -1,9 +1,9 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
-import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { type CollectionEntry, getCollection } from "astro:content";
+import BlogPostLayout from "../../layouts/BlogPostLayout.astro";
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog', ({data}) => {
+  const posts = await getCollection("blog", ({ data }) => {
     // In production, only include published and preview posts
     if (import.meta.env.PROD) {
       return data.status !== "draft";
@@ -12,13 +12,13 @@ export async function getStaticPaths() {
     // In development, include all posts
     return true;
   });
-  
+
   return posts.map((post) => ({
     params: { slug: post.slug },
     props: post,
   }));
 }
-type Props = CollectionEntry<'blog'>;
+type Props = CollectionEntry<"blog">;
 
 const post = Astro.props;
 const { Content } = await post.render();

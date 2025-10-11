@@ -1,83 +1,78 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import BaseHead from '@/BaseHead.astro';
-import Header from '@/Header.astro';
-import Footer from '@/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import { Image } from 'astro:assets';
-
-import ageCalcWebM from '/age-calculator-sm.webm';
-import ageCalcMP4 from '/age-calculator-sm.mp4';
-import resumeImage from '../assets/resume.png';
-
+import { Image } from "astro:assets";
+import BaseHead from "@/BaseHead.astro";
+import Footer from "@/Footer.astro";
+import Header from "@/Header.astro";
+import ageCalcMP4 from "/age-calculator-sm.mp4";
+import ageCalcWebM from "/age-calculator-sm.webm";
+import resumeImage from "../assets/resume.png";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <style>
-      video,
-      img {
-        margin: 0 auto;
-        border: 5px solid;
-        border-radius: 3px;
-        border-color: var(--accent);
-        display: block;
-      }
-
-      video.no-border {
-        border: none;
-      }
-
-      video {
-        max-width: 95%;
-      }
-
-      img + p,
-      video + p {
-        text-align: center;
-        font-size: 0.9rem;
-        font-style: italic;
-      }
-
-      /* :has(> video), */
-      .video-container {
-        width: 100%;
-        text-align: center;
-        overflow: hidden;
-      }
-
-      /* :has(> video) > *, */
-      .video-container > * {
-        display: block;
-      }
-
-      .resume-container {
-        /* display: flex;
-        align-items: center; */
-      }
-    </style>
   </head>
   <body>
     <Header title={SITE_TITLE} />
-    <main id="main-content">
-      <h1>👨‍🚀 Hello, Astronaut!</h1>
-      <p>
-        My name is Brian Poblete. I am a frontend developer and UX designer. I
-        mainly use <strong>React</strong> and <strong>JavaScript</strong> at
-        work but I've been using <strong>SolidJS</strong> and <strong
-          >TypeScript</strong
-        > for my personal projects.
-      </p>
-      <p>
-        For my most recent work, I augmented components with improved
-        accessibility features for ADA compliance. This work is visible on
-        websites under the Gap family of brands such as Banana Republic, Old
-        Navy, and Athleta. Here's an example:
-      </p>
+    <main id='main-content'>
+      <section>
+        <h1>Welcome!</h1>
+        <p>
+          My name is Brian Poblete. I am a frontend developer and UX designer. I
+          have a passion for <strong>accessibility</strong> and teaching others.
+          I aspire to one day become a certified accessibility expert so I can make
+          the world a better place through the designs that I create and the code
+          that I write.
+        </p>
+        <p>
+          I mainly use <strong>React</strong> and <strong>JavaScript</strong> at
+          work but I've been using <strong>SolidJS</strong> and <strong
+            >TypeScript</strong
+          > for my personal projects. Scroll down to learn more about me!
+        </p>
+      </section>
 
+      <section>
+        <h2>Work Experience</h2>
+        <p>
+          I have professionally worked with a bunch of different fullstack
+          languages and frameworks. Most of my experience is with frontend
+          development but I'm no slouch with backend tech as well.
+        </p>
+        <ul>
+          <li>Venerate work</li>
+          <li>Maglab work</li>
+          <li>
+            <a href='#'>See more...</a>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Open-Source Contributions</h2>
+        <p>
+          I'm an avid supporter of open-source. Here's some of my work that I
+          have contributed to various open-source projects.
+        </p>
+        <ul>
+          <li>Open Props contributions</li>
+          <li>MDN Web Docs</li>
+          <li>TailwindCSS issues</li>
+          <li>Solild JS contributions</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Projects</h2>
+        <p>
+          Here I have some of my personal and university projects. I am always
+          looking for new challenges and fun things to learn.
+        </p>
+      </section>
       {/* TODO: Make this a separate component. */}
-      <div class='video-container'>
+      <!-- <div class='video-container'>
         <video
           autoplay
           muted
@@ -87,8 +82,14 @@ import resumeImage from '../assets/resume.png';
           width={600}
           height={600}
         >
-          <source src="https://res.cloudinary.com/dvivrw9ml/video/upload/v1709434127/y3kytuqxastyqtk4mkog.webm" type='video/webm' />
-          <source src="https://res.cloudinary.com/dvivrw9ml/video/upload/v1709434127/mv4dtaw2pixuatuwuie6.mov" type='video/mov' />
+          <source
+            src='https://res.cloudinary.com/dvivrw9ml/video/upload/v1709434127/y3kytuqxastyqtk4mkog.webm'
+            type='video/webm'
+          />
+          <source
+            src='https://res.cloudinary.com/dvivrw9ml/video/upload/v1709434127/mv4dtaw2pixuatuwuie6.mov'
+            type='video/mov'
+          />
           <p>
             Your browser doesn't support HTML5 video. Here is a
             <a
@@ -98,20 +99,13 @@ import resumeImage from '../assets/resume.png';
           </p>
         </video>
         <p>Look suggestion component on the Banana Republic website.</p>
-      </div>
+      </div> -->
 
-      <p>
-        This website is built with Astro. Most of it is still under development
-        but you can check out the
-        <a href='/about'>About</a>
-         page to learn more about me.
-      </p>
       <div class='resume-container'>
         <p>
           My resume is also available on the
           <a href='/resume'>Resume</a>
-           page. The page is still under development but the resume is up to
-          date!
+          page. The page is still under development but the resume is up to date!
         </p>
         <a href='/BrianPoblete_resume.pdf' download>
           <Image
@@ -120,17 +114,18 @@ import resumeImage from '../assets/resume.png';
             alt='Brian Poblete - Resume Download'
             width='500'
             height='647'
-            loading="eager"
+            loading='eager'
           />
           <p>Click to download resume</p>
         </a>
       </div>
+
       <p>
         In the meantime, please check out this <a
           href='https://solid-mentor.netlify.app'>other project</a
-        > I've been working on. It's a collection of my solutions to various
-        challenges from Frontend Mentor built with SolidJS plus a bunch of other
-        frameworks and tools. Here's a preview.
+        > I've been working on. It's a collection of my solutions to various challenges
+        from Frontend Mentor built with SolidJS plus a bunch of other frameworks
+        and tools. Here's a preview.
       </p>
       <div class='video-container'>
         <video
@@ -159,3 +154,44 @@ import resumeImage from '../assets/resume.png';
     <Footer />
   </body>
 </BaseLayout>
+
+<style>
+  :where(video, img) {
+    margin: 0 auto;
+    border: 5px solid;
+    border-color: var(--accent);
+    display: block;
+  }
+
+  video.no-border {
+    border: none;
+  }
+
+  video {
+    max-width: 95%;
+  }
+
+  img + p,
+  video + p {
+    text-align: center;
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+
+  /* :has(> video), */
+  .video-container {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  /* :has(> video) > *, */
+  .video-container > * {
+    display: block;
+  }
+
+  .resume-container {
+    /* display: flex;
+  align-items: center; */
+  }
+</style>

@@ -1,59 +1,52 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
-import SocialLinks from './SocialLinks.astro';
+import { SITE_TITLE } from "../consts";
+import HeaderLink from "./HeaderLink.astro";
 ---
 
 <header transition:animate='none'>
-  <a href='#main-content' class='sr-only sr-show-on-focus' id="skip-link" >Skip to main content</a>
+  <a href='#main-content' class='sr-only sr-show-on-focus' id='skip-link'
+    >Skip to main content</a
+  >
   <nav>
-    <h2><a href='/'>{SITE_TITLE}</a></h2>
-    <div class='internal-links'>
-      <ul class='style-none'>
-        <li><HeaderLink href='/'>Home</HeaderLink></li>
-        <li><HeaderLink href='/blog'>Blog</HeaderLink></li>
-        <li><HeaderLink href='/resume'>Resume</HeaderLink></li>
-        <li><HeaderLink href='/about'>About</HeaderLink></li>
-      </ul>
-    </div>
-    <div class='social-links'>
-      <SocialLinks />
-    </div>
+    <a href='/' aria-label="Brian Poblete - site home" class="site-home">{SITE_TITLE}</a>
+
+    <ul class='ul-style-none internal-links'>
+      <li><HeaderLink href='/'>Home</HeaderLink></li>
+      <li><HeaderLink href='/blog'>Blog</HeaderLink></li>
+      <li><HeaderLink href='/resume'>Resume</HeaderLink></li>
+      <li><HeaderLink href='/about'>About</HeaderLink></li>
+    </ul>
   </nav>
 </header>
-
 
 <style>
   #skip-link {
     position: absolute;
     left: 0;
     background: var(--surface);
-    padding: 1rem;
+    padding: var(--size-3);
     z-index: 100;
+  }
+
+  .site-home {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: var(--font-size-fluid-1);
+    font-weight: bold;
   }
   header {
     margin: 0;
-    padding: 0 1rem;
+    padding: 0 var(--size-3);
     background: var(--surface);
-    box-shadow: 0 2px 8px rgba(var(--black), 5%);
-  }
-  h2 {
-    margin: 0;
-    font-size: 1rem;
   }
 
-  h2 a,
-  h2 a.active {
-    text-decoration: none;
-  }
   nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
 
-  /* Width for folded Galaxy Fold */
-  @media (max-width: 375px) {
+  @media (width < 768px) {
     nav {
       flex-direction: column;
       justify-content: center;
@@ -63,35 +56,34 @@ import SocialLinks from './SocialLinks.astro';
       width: 100%;
       display: flex;
       justify-content: space-evenly;
+      gap: 0;
     }
 
-    h2 {
-      margin-top: 1rem;
+    .site-home {
+      
     }
+
   }
   nav a {
-    margin: 1rem 0.5rem;
+    margin: var(--size-2) 0.425rem;
     color: var(--black);
-    border-bottom: 4px solid transparent;
     text-decoration: none;
   }
   nav a.active {
-    text-decoration: none;
-    border-bottom-color: var(--accent);
+    text-decoration: underline var(--accent) var(--size-1);
+    text-underline-offset: var(--size-3);
+
   }
   .social-links {
     display: flex;
-    gap: 1rem;
+    gap: var(--size-3);
   }
 
   ul {
     display: flex;
-    gap: 1rem;
+    gap: var(--size-3);
   }
-  @media (max-width: 720px) {
-    .social-links {
-      display: none;
-    }
+  @media (width < 720px) {
     ul {
       overflow-x: scroll;
     }
