@@ -15,30 +15,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       description={`1.5+ years experience with React. 3+ years experience with HTML5, CSS3, and JavaScript. 2+ years experience with UI/UX Design.`}
       image={image.src}
     />
-    <style>
-      img {
-        display: block;
-        margin: 0 auto;
-        border: 5px solid;
-        border-radius: 3px;
-        border-color: hsl(151deg 79% 73%);
-      }
-
-      .hero-img {
-        border: none;
-        box-shadow: var(--box-shadow-md);
-      }
-      blockquote {
-        margin-top: var(--size-3);
-      }
-      a > p {
-        text-align: center;
-      }
-    </style>
   </head>
   <body>
     <Header />
-    <main id="main-content">
+    <main id='main-content'>
       <section>
         <h1 id='brian-poblete'>Brian Poblete Resume</h1>
         <p>
@@ -54,7 +34,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             alt='Brian Poblete - Resume Download'
             width='500'
             height='647'
-            loading="eager"
+            loading='eager'
           />
           <p>Click to download resume</p>
         </a>
@@ -103,9 +83,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             Development of data visualization tools for mass spectrometry data.
           </li>
           <li>
-            Collaborating with scientists and engineers to create a user-friendly
-            interface for data analysis to significantly improve the efficiency of the
-            research process.
+            Collaborating with scientists and engineers to create a
+            user-friendly interface for data analysis to significantly improve
+            the efficiency of the research process.
           </li>
         </ul>
 
@@ -115,8 +95,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <p><em>May 2023 &mdash; May 2024</em></p>
         <ul>
           <li>
-            Conducted research on the traffic monitoring system of the
-            Florida Department of Transportation.
+            Conducted research on the traffic monitoring system of the Florida
+            Department of Transportation.
           </li>
           <li>
             Identifying usability pain points to optimize user experience and
@@ -158,7 +138,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               <li><em>May. 2023 – Dec. 2024</em></li>
               <li>Vice President of the ACM FSU Chapter - 2023</li>
             </ul>
-            <hr style="border: 0px;">
+            <hr style='border: 0px;' />
             <ul>
               <li><em>B.S. in Computer Science</em> - 3.643 GPA</li>
               <li><em>Aug. 2021 – May 2023</em></li>
@@ -281,3 +261,24 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <Footer />
   </body>
 </BaseLayout>
+
+<style>
+  img {
+    display: block;
+    margin: 0 auto;
+    border: 5px solid;
+    border-radius: 3px;
+    border-color: hsl(151deg 79% 73%);
+  }
+
+  .hero-img {
+    border: none;
+    box-shadow: var(--box-shadow-md);
+  }
+  blockquote {
+    margin-top: var(--size-3);
+  }
+  a > p {
+    text-align: center;
+  }
+</style>
