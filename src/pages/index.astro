@@ -8,6 +8,13 @@ import ageCalcWebM from '/age-calculator-sm.webm';
 import resumeImage from '../assets/resume.png';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const openSourceLinks = [
+  { text: 'Open Props CSS Library', url: 'https://github.com/argyleink/open-props/issues?q=author:Brian-Pob' },
+  { text: 'MDN Web Docs', url: 'https://github.com/mdn/content/issues?q=author:Brian-Pob' },
+  { text: 'TailwindCSS issues', url: 'https://github.com/tailwindlabs/tailwindcss/issues?q=Brian-Pob' },
+  { text: 'Solid JS contributions', url: 'https://github.com/solidjs/solid-docs/issues?q=author:Brian-Pob' }
+];
 ---
 
 <BaseLayout>
@@ -58,22 +65,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           have contributed to various open-source projects.
         </p>
         <ul>
-          <li>
-            [Open Props CSS
-            Library](https://github.com/argyleink/open-props/issues?q=author:Brian-Pob)
-          </li>
-          <li>
-            [MDN Web
-            Docs](https://github.com/mdn/content/issues?q=author:Brian-Pob)
-          </li>
-          <li>
-            [TailwindCSS
-            issues](https://github.com/tailwindlabs/tailwindcss/issues?q=Brian-Pob)
-          </li>
-          <li>
-            [Solild JS
-            contributions](https://github.com/solidjs/solid-docs/issues?q=author:Brian-Pob)
-          </li>
+          {openSourceLinks.map(link => <li><a href={link.url}>{link.text}</a></li>)}
         </ul>
       </section>
 
