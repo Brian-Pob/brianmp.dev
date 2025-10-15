@@ -8,12 +8,25 @@ import ageCalcWebM from '/age-calculator-sm.webm';
 import resumeImage from '../assets/resume.png';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { experiences } from './work-experience/experiences';
 
 const openSourceLinks = [
-  { text: 'Open Props CSS Library', url: 'https://github.com/argyleink/open-props/issues?q=author:Brian-Pob' },
-  { text: 'MDN Web Docs', url: 'https://github.com/mdn/content/issues?q=author:Brian-Pob' },
-  { text: 'TailwindCSS issues', url: 'https://github.com/tailwindlabs/tailwindcss/issues?q=Brian-Pob' },
-  { text: 'Solid JS contributions', url: 'https://github.com/solidjs/solid-docs/issues?q=author:Brian-Pob' }
+  {
+    text: 'Open Props CSS Library',
+    url: 'https://github.com/argyleink/open-props/issues?q=author:Brian-Pob',
+  },
+  {
+    text: 'MDN Web Docs',
+    url: 'https://github.com/mdn/content/issues?q=author:Brian-Pob',
+  },
+  {
+    text: 'TailwindCSS issues',
+    url: 'https://github.com/tailwindlabs/tailwindcss/issues?q=Brian-Pob',
+  },
+  {
+    text: 'Solid JS contributions',
+    url: 'https://github.com/solidjs/solid-docs/issues?q=author:Brian-Pob',
+  },
 ];
 ---
 
@@ -23,7 +36,7 @@ const openSourceLinks = [
   </head>
   <body>
     <Header title={SITE_TITLE} />
-    <main id='main-content'>
+    <main id="main-content">
       <section>
         <h1>Welcome!</h1>
         <p>
@@ -44,17 +57,20 @@ const openSourceLinks = [
       <section>
         <h2>Work Experience</h2>
         <p>
-          I have professionally worked with a bunch of different fullstack
-          languages and frameworks. Most of my experience is with frontend
-          development but I'm no slouch with backend tech as well.
+          I have professionally worked with a bunch of different languages and
+          frameworks like React, Node.js, and Python. Most of my experience is
+          with frontend web development but I'm no slouch with backend tech as
+          well! Below are some of my recent roles.
         </p>
         <ul>
-          <li>[Amazon work]</li>
-          <li>[Venerate work]</li>
-          <li>[Maglab work]</li>
-          <li>
-            <a href='#'>See more...</a>
-          </li>
+          {
+            experiences.slice(0, 3).map((job) => (
+              <li>
+                {job.title} -{' '}
+                <em style="font-size: var(--font-size-3);">{job.company}</em>{' '}
+              </li>
+            ))
+          }
         </ul>
       </section>
 
@@ -65,13 +81,20 @@ const openSourceLinks = [
           have contributed to various open-source projects.
         </p>
         <ul>
-          {openSourceLinks.map(link => <li><a href={link.url}>{link.text}</a></li>)}
+          {
+            openSourceLinks.map((link) => (
+              <li>
+                <a href={link.url}>{link.text}</a>
+              </li>
+            ))
+          }
         </ul>
       </section>
 
-      <!-- F -->
       {/* TODO: Make this a separate component. */}
-      <!-- <div class='video-container'>
+      {
+        /* 
+      <div class='video-container'>
         <video
           autoplay
           muted
@@ -98,55 +121,62 @@ const openSourceLinks = [
           </p>
         </video>
         <p>Look suggestion component on the Banana Republic website.</p>
-      </div> -->
+      </div>
+      */
+      }
 
-      <div class='resume-container'>
+      <div class="resume-container">
         <p>
           My resume is also available on the
-          <a href='/resume'>Resume</a>
+          <a href="/resume">Resume</a>
           page. The page is still under development but the resume is up to date!
         </p>
-        <a href='/BrianPoblete_resume.pdf' download>
+        <a href="/BrianPoblete_resume.pdf" download>
           <Image
-            class='resume-img'
+            class="resume-img"
             src={resumeImage}
-            alt='Brian Poblete - Resume Download'
-            width='500'
-            height='647'
-            loading='eager'
+            alt="Brian Poblete - Resume Download"
+            width="500"
+            height="647"
+            loading="eager"
           />
           <p>Click to download resume</p>
         </a>
       </div>
 
-      <p>
+      {
+        /* TODO: Host the solid project with a new provider since moving away from Netlify */
+      }
+      {
+        /* <p>
         In the meantime, please check out this <a
           href='https://solid-mentor.netlify.app'>other project</a
         > I've been working on. It's a collection of my solutions to various challenges
         from Frontend Mentor built with SolidJS plus a bunch of other frameworks
         and tools. Here's a preview.
-      </p>
-      <div class='video-container'>
+      </p> */
+      }
+
+      <div class="video-container">
         <video
           autoplay
           muted
           loop
-          aria-label='Video demonstrating age calculator component'
+          aria-label="Video demonstrating age calculator component"
         >
-          <source src={ageCalcWebM} type='video/webm' />
-          <source src={ageCalcMP4} type='video/mp4' />
+          <source src={ageCalcWebM} type="video/webm" />
+          <source src={ageCalcMP4} type="video/mp4" />
           <p>
             Your browser doesn't support HTML5 video. Here is a
             <a
               href={new URL('age-calculator-sm.mp4', Astro.url).toString()}
-              aria-label='Link to age calculator video'>link to the video</a
+              aria-label="Link to age calculator video">link to the video</a
             >instead.
           </p>
         </video>
         <p>
-          <a href='https://solid-mentor.netlify.app/challenges/agecalculator'
-            >Age Calculator
-          </a>challenge done with SCSS and the View Transitions API.
+          <a href="#">Age Calculator </a>challenge done with SCSS and the View
+          Transitions API.
         </p>
       </div>
     </main>

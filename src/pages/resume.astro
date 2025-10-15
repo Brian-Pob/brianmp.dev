@@ -1,11 +1,11 @@
 ---
-import { Image } from "astro:assets";
-import image from "../assets/ipad-wireframe.png";
-import resumeImage from "../assets/resume.png";
-import BaseHead from "../components/BaseHead.astro";
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
-import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from 'astro:assets';
+import image from '../assets/ipad-wireframe.png';
+import resumeImage from '../assets/resume.png';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout>
@@ -18,30 +18,30 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </head>
   <body>
     <Header />
-    <main id='main-content'>
+    <main id="main-content">
       <section>
-        <h1 id='brian-poblete'>Brian Poblete Resume</h1>
+        <h1 id="brian-poblete">Brian Poblete Resume</h1>
         <p>
           I am a software engineer with a background in Web Development and User
           Experience. I build beautiful and usable user-interfaces that increase
           conversion rates while adhering to accessibility standards for ADA
           Compliance. Currently working with React and TypeScript.
         </p>
-        <a href='/BrianPoblete_resume.pdf' download>
+        <a href="/BrianPoblete_resume.pdf" download>
           <Image
-            class='resume-img'
+            class="resume-img"
             src={resumeImage}
-            alt='Brian Poblete - Resume Download'
-            width='500'
-            height='647'
-            loading='eager'
+            alt="Brian Poblete - Resume Download"
+            width="500"
+            height="647"
+            loading="eager"
           />
           <p>Click to download resume</p>
         </a>
       </section>
 
       <section>
-        <h2 id='skills'>Skills</h2>
+        <h2 id="skills">Skills</h2>
         <ul>
           <li>
             <strong>Languages:</strong> HTML, CSS, JavaScript, TypeScript, SASS/SCSS,
@@ -65,16 +65,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </section>
 
       <section>
-        <h2 id='professional-experience'>Professional Experience</h2>
+        <h2 id="professional-experience">Professional Experience</h2>
         <p>
           <em
             >For a full history of my work experience, please visit my <a
-              href='https://www.linkedin.com/in/brian-pob'>LinkedIn page</a
+              href="https://www.linkedin.com/in/brian-pob">LinkedIn page</a
             >.</em
           >
         </p>
 
-        <h3 id='frontend-engineer-nhmfl'>
+        <h3 id="frontend-engineer-nhmfl">
           Frontend Engineer | National High Magnetic Field Laboratory
         </h3>
         <p><em>May 2024 &mdash; Present</em></p>
@@ -89,7 +89,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </li>
         </ul>
 
-        <h3 id='research-assistant-fsu-dept-of-computer-science'>
+        <h3 id="research-assistant-fsu-dept-of-computer-science">
           Research Assistant | FSU Dept. of Computer Science
         </h3>
         <p><em>May 2023 &mdash; May 2024</em></p>
@@ -108,7 +108,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </li>
         </ul>
 
-        <h3 id='contract-web-developer-venerate-agency'>
+        <h3 id="contract-web-developer-venerate-agency">
           Contract Web Developer | Venerate Agency
         </h3>
         <p><em>Mar. 2022 &mdash; May 2023</em></p>
@@ -129,7 +129,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </li>
         </ul>
 
-        <h2 id='education'>Education</h2>
+        <h2 id="education">Education</h2>
         <ul>
           <li>
             <p><strong>Florida State University</strong></p>
@@ -138,7 +138,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               <li><em>May. 2023 – Dec. 2024</em></li>
               <li>Vice President of the ACM FSU Chapter - 2023</li>
             </ul>
-            <hr style='border: 0px;' />
+            <hr style="border: 0px;" />
             <ul>
               <li><em>B.S. in Computer Science</em> - 3.643 GPA</li>
               <li><em>Aug. 2021 – May 2023</em></li>
@@ -157,8 +157,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </ul>
       </section>
       <section>
-        <h2 id='personal-projects'>Personal Projects</h2>
-        <h3 id='personal-website'>Personal Website</h3>
+        <h2 id="personal-projects">Personal Projects</h2>
+        <h3 id="personal-website">Personal Website</h3>
         <ul>
           <li>
             <strong>Technologies:</strong> Astro, TypeScript, S/CSS, Vite
@@ -174,12 +174,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </li>
           <li>
             Hosted on Vercel and open-source on
-            <a href='https://github.com/Brian-Pob/brianmp.dev' target='_blank'>
+            <a href="https://github.com/Brian-Pob/brianmp.dev" target="_blank">
               GitHub
             </a>.
           </li>
         </ul>
-        <h3 id='frontend-mentor-challenges'>Frontend Mentor Challenges</h3>
+        <h3 id="frontend-mentor-challenges">Frontend Mentor Challenges</h3>
         <ul>
           <li>
             <strong>Technologies:</strong> TypeScript, SCSS, SolidJS, Vite
@@ -194,11 +194,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </li>
           <li>
             Showcased completed and in-progress solutions on my <a
-              href='your-website-url'>website</a
-            > and <a href='https://github.com/Brian-Pob'>GitHub repo</a>.
+              href="your-website-url">website</a
+            > and <a href="https://github.com/Brian-Pob">GitHub repo</a>.
           </li>
         </ul>
-        <h3 id='whack-a-mole-minimalist-edition'>
+        <h3 id="whack-a-mole-minimalist-edition">
           Whack-a-Mole Minimalist Edition
         </h3>
         <ul>
@@ -212,14 +212,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </li>
           <li>
             Code is open-source and available on <a
-              href='https://github.com/Brian-Pob/whack-a-mole'>GitHub</a
+              href="https://github.com/Brian-Pob/whack-a-mole">GitHub</a
             > and the game is hosted on Netlify.
           </li>
         </ul>
       </section>
 
       <section>
-        <h2 id='open-source-contributions'>Open Source Contributions</h2>
+        <h2 id="open-source-contributions">Open Source Contributions</h2>
         <ul>
           <li>
             <strong
@@ -249,7 +249,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 in web development, by filling in critical missing information
                 and enhancing the clarity of wording on the
                 <a
-                  href='https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API'
+                  href="https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API"
                   >View Transitions API</a
                 > page.
               </li>
@@ -275,9 +275,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     border: none;
     box-shadow: var(--box-shadow-md);
   }
+
   blockquote {
     margin-top: var(--size-3);
   }
+
   a > p {
     text-align: center;
   }

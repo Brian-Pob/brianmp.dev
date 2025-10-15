@@ -1,0 +1,126 @@
+---
+import BaseLayout from 'src/layouts/BaseLayout.astro';
+import BaseHead from '@/BaseHead.astro';
+import Footer from '@/Footer.astro';
+import Header from '@/Header.astro';
+import { experiences } from './experiences';
+
+const title = `Work Experience - Brian Poblete`;
+const description = `Professional roles and highlights from my frontend and UX work.`;
+---
+
+<BaseLayout>
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+  <body>
+    <Header />
+    <main id="main-content">
+      <section class="work-experience prose" aria-label="Work experience">
+        <h1>Work Experience</h1>
+
+        {
+          experiences.map((job) => (
+            <article class="job">
+              <header>
+                <div class="title-row">
+                  <h3>{job.title}</h3>
+                  <time datetime={job.dateTime}>{job.dateLabel}</time>
+                </div>
+                <div class="company">{job.company}</div>
+                <ul class="tech-list">
+                  {job.tech.map((t) => (
+                    <li>{t}</li>
+                  ))}
+                </ul>
+              </header>
+
+              <ul>
+                {job.bullets.map((b) => (
+                  <li set:html={b} />
+                ))}
+              </ul>
+            </article>
+          ))
+        }
+      </section>
+    </main>
+    <Footer />
+  </body>
+</BaseLayout>
+
+<style>
+  .work-experience {
+    margin-top: var(--size-4);
+  }
+
+  .job {
+    margin: var(--size-5) 0;
+    padding-bottom: var(--size-5);
+    border-bottom: 1px solid var(--gray-light);
+  }
+
+  .title-row {
+    display: flex;
+    align-items: baseline;
+    gap: var(--size-3);
+    justify-content: space-between;
+  }
+
+  .title-row h3 {
+    margin: 0;
+    font-size: var(--font-size-6);
+  }
+
+  .title-row time {
+    color: var(--text-primary);
+    font-size: var(--font-size-3);
+  }
+
+  .company {
+    color: var(--text-secondary);
+    font-weight: 600;
+    margin-top: var(--size-2);
+  }
+
+  .tech {
+    font-size: var(--font-size-3);
+    font-style: italic;
+    color: var(--text-primary);
+    margin-top: var(--size-2);
+  }
+
+  .tech-list {
+    display: inline-flex;
+    gap: var(--size-2);
+    list-style: none;
+    padding: 0;
+    margin: var(--size-2) 0 0 0;
+    flex-wrap: wrap;
+  }
+  .tech-list li::after {
+    content: '·';
+    margin-left: calc(var(--size-1) * 0.5);
+    opacity: 0.7;
+  }
+  .tech-list li:last-child::after {
+    content: '';
+  }
+
+  ul {
+    margin-top: var(--size-3);
+    padding-left: var(--size-4);
+  }
+
+  li {
+    margin: var(--size-2) 0;
+  }
+
+  @media (width < 720px) {
+    .title-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--size-1);
+    }
+  }
+</style>

@@ -1,20 +1,22 @@
 ---
-import { SITE_TITLE } from "../consts";
-import HeaderLink from "./HeaderLink.astro";
+import { SITE_TITLE } from '../consts';
+import HeaderLink from './HeaderLink.astro';
 ---
 
-<header transition:animate='none'>
-  <a href='#main-content' class='sr-only sr-show-on-focus' id='skip-link'
+<header transition:animate="none">
+  <a href="#main-content" class="sr-only sr-show-on-focus" id="skip-link"
     >Skip to main content</a
   >
   <nav>
-    <a href='/' aria-label="Brian Poblete - site home" class="site-home">{SITE_TITLE}</a>
+    <a href="/" aria-label="Brian Poblete - site home" class="site-home"
+      >{SITE_TITLE}</a
+    >
 
-    <ul class='ul-style-none internal-links'>
-      <li><HeaderLink href='/'>Home</HeaderLink></li>
-      <li><HeaderLink href='/blog'>Blog</HeaderLink></li>
-      <li><HeaderLink href='/resume'>Resume</HeaderLink></li>
-      <li><HeaderLink href='/about'>About</HeaderLink></li>
+    <ul class="ul-style-none internal-links">
+      <li><HeaderLink href="/">Home</HeaderLink></li>
+      <li><HeaderLink href="/blog">Blog</HeaderLink></li>
+      <li><HeaderLink href="/resume">Resume</HeaderLink></li>
+      <li><HeaderLink href="/about">About</HeaderLink></li>
     </ul>
   </nav>
 </header>
@@ -60,19 +62,16 @@ import HeaderLink from "./HeaderLink.astro";
     }
 
     .site-home {
-      
     }
-
   }
   nav a {
     margin: var(--size-2) 0.425rem;
-    color: var(--black);
+    color: var(--text-primary);
     text-decoration: none;
   }
   nav a.active {
     text-decoration: underline var(--accent) var(--size-1);
     text-underline-offset: var(--size-3);
-
   }
   .social-links {
     display: flex;

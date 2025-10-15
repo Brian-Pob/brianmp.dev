@@ -1,59 +1,75 @@
 ---
-import { Image } from "astro:assets";
-import type { CollectionEntry } from "astro:content";
-import BaseHead from "@/BaseHead.astro";
-import Footer from "@/Footer.astro";
-import FormattedDate from "@/FormattedDate.astro";
-import Header from "@/Header.astro";
-import BaseLayout from "./BaseLayout.astro";
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import BaseHead from '@/BaseHead.astro';
+import Footer from '@/Footer.astro';
+import FormattedDate from '@/FormattedDate.astro';
+import Header from '@/Header.astro';
+import BaseLayout from './BaseLayout.astro';
 
-type Props = CollectionEntry<"blog">["data"];
+type Props = CollectionEntry<'blog'>['data'];
 
 const { status, title, description, pubDate, updatedDate, heroImage, extra } =
   Astro.props;
 ---
 
-
 <BaseLayout>
   <head>
-    <BaseHead title={title} description={description} extra={extra} image={heroImage?.src} status={status}/>
-  
+    <BaseHead
+      title={title}
+      description={description}
+      extra={extra}
+      image={heroImage?.src}
+      status={status}
+    />
   </head>
 
   <body>
     <Header />
     {
       (status === 'preview' || status === 'draft') && (
-        <div class='prose' style="background-color:firebrick; color: white; text-align: center; font-size: var(--font-size-5);">
-          <p>This post is under construction.</p>
+        // NOTE hardcoded styles here to make it obvious
+        <div
+          class="prose"
+          style={{
+            backgroundColor: status === 'draft' ? 'firebrick' : 'darkgreen',
+            color: 'white',
+            textAlign: 'center',
+            fontSize: 'var(--font-size-5)',
+          }}
+        >
+          <p>
+            This post is in
+            {status.toLocaleUpperCase()} mode.
+          </p>
         </div>
       )
     }
     <main id="main-content">
-        {
-          heroImage && (
-            <div class='hero-image'>
-                <Image src={heroImage} alt="" loading="eager"/>
-            </div>
-          )
-        }
-        <div class='prose'>
-          <div class='title'>
-            <div class='date'>
-              <FormattedDate date={pubDate} />
-              {
-                updatedDate && (
-                  <div class='last-updated-on'>
-                    Last updated on <FormattedDate date={updatedDate} />
-                  </div>
-                )
-              }
-            </div>
-            <h1>{title}</h1>
-            <hr />
+      {
+        heroImage && (
+          <div class="hero-image">
+            <Image src={heroImage} alt="" loading="eager" />
           </div>
-          <slot />
+        )
+      }
+      <div class="prose">
+        <div class="title">
+          <div class="date">
+            <FormattedDate date={pubDate} />
+            {
+              updatedDate && (
+                <div class="last-updated-on">
+                  Last updated on <FormattedDate date={updatedDate} />
+                </div>
+              )
+            }
+          </div>
+          <h1>{title}</h1>
+          <hr />
         </div>
+        <slot />
+      </div>
     </main>
     <Footer />
   </body>
@@ -68,7 +84,7 @@ const { status, title, description, pubDate, updatedDate, heroImage, extra } =
   .hero-image img {
     display: block;
     margin: 0 auto;
-    border-radius: 12px;
+    border-radius: var(--radius-3);
     box-shadow: var(--box-shadow);
 
     max-width: 100%;
@@ -78,23 +94,23 @@ const { status, title, description, pubDate, updatedDate, heroImage, extra } =
   }
   .prose {
     width: 720px;
-    max-width: calc(100% - 2em);
+    max-width: calc(100% - 2 * var(--size-4));
     margin: auto;
-    padding: 1em;
+    padding: var(--size-4);
     color: var(--text-primary);
   }
 
   .title {
-    margin-bottom: 1em;
-    padding: 1em 0;
+    margin-bottom: var(--size-4);
+    padding: var(--size-4) 0;
     text-align: center;
     line-height: 1;
   }
   .title h1 {
-    margin: 0 0 0.5em 0;
+    margin: 0 0 var(--size-3) 0;
   }
   .date {
-    margin-bottom: 0.5em;
+    margin-bottom: var(--size-3);
     color: var(--text-secondary);
   }
   .last-updated-on {
@@ -116,12 +132,11 @@ const { status, title, description, pubDate, updatedDate, heroImage, extra } =
     max-inline-size: 100%;
     margin-inline: auto;
 
-    @media (768px <= width < 1024px){
+    @media (768px <= width < 1024px) {
       max-inline-size: 75%;
     }
-    @media (1024px <= width){
+    @media (1024px <= width) {
       max-inline-size: 50%;
     }
-
   }
 </style>

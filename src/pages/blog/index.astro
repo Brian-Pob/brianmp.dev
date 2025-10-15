@@ -15,7 +15,7 @@ const posts = await getCollection('blog', ({ data }) => {
   );
 });
 const sortedPosts = posts.sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
@@ -23,7 +23,7 @@ const sortedPosts = posts.sort(
   <head> <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} /> </head>
   <body>
     <Header />
-    <main id='main-content'>
+    <main id="main-content">
       <section>
         <ul>
           {
@@ -31,17 +31,17 @@ const sortedPosts = posts.sort(
               <li>
                 <a href={`/blog/${post.slug}/`}>
                   {post.data.heroImage ? (
-                    <Image src={post.data.heroImage} alt='' />
+                    <Image src={post.data.heroImage} alt="" />
                   ) : (
                     <Image
                       width={720}
                       height={360}
-                      src='/og-banner-no-tag.png'
-                      alt=''
+                      src="/blog-placeholder-3.jpg"
+                      alt=""
                     />
                   )}
-                  <h4 class='title'>{post.data.title}</h4>
-                  <p class='date'>
+                  <h4 class="title">{post.data.title}</h4>
+                  <p class="date">
                     <FormattedDate date={post.data.pubDate} />
                   </p>
                 </a>
