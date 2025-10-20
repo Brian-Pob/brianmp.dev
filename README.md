@@ -45,4 +45,4 @@ and salvation through faith in Jesus Christ alone.
 
 I understand that this is completely unnecessary for a personal blog website
 but I wanted to put it out there so there can be no dispute that I am a
-follower of Jesus Christ. 
+follower of Jesus Christ.
