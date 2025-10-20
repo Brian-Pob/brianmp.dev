@@ -1,0 +1,64 @@
+---
+import BaseHead from '@/BaseHead.astro';
+import BlogListing from '@/BlogListing.astro';
+import Footer from '@/Footer.astro';
+import Header from '@/Header.astro';
+import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
+import { SITE_DESCRIPTION, SITE_TITLE } from 'src/consts';
+import BaseLayout from 'src/layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  // 1. Get content under 'blog'
+  const posts = await getCollection('blog', () => true);
+
+  // 2. Derive top-level categories from post slugs or id -- slug like 'cool-stuff/1'
+  const categories = new Set();
+  for (const post of posts) {
+    // 2.a Split slug and get first part. Ex: 'cool-stuff/1' -> 'cool-stuff'
+    const parts = post.slug.split('/');
+    if (parts.length > 1) {
+      // 2.b Add first part to categories set
+      // Ex: categories.add('cool-stuff');
+      categories.add(parts[0]);
+    }
+  }
+
+  // 3. Return paths for each category.
+  // Ex: [{ params: { category: 'cool-stuff' } }, { params: { category: 'another-category' } }, ...]
+  return Array.from(categories).map((cat) => ({ params: { category: cat } }));
+}
+
+// Astro.params.category is set by getStaticPaths ^
+const category = String(Astro.params.category);
+
+// Get all blog posts that are published (or preview in dev)
+const posts = await getCollection('blog', ({ data }) => {
+  // include published (and previews in dev)
+  return (
+    data.status === 'published' ||
+    (import.meta.env.DEV && data.status === 'preview')
+  );
+});
+
+// If a post's slug starts with the category, include it
+const filtered = posts.filter((p) =>
+  (p.slug as string).startsWith(`${category}/`),
+) as CollectionEntry<'blog'>[];
+---
+
+<BaseLayout>
+  <head>
+    <BaseHead
+      title={`${category} — ${SITE_TITLE}`}
+      description={SITE_DESCRIPTION}
+    />
+  </head>
+  <body>
+    <Header />
+    <main id='main-content'>
+      <BlogListing posts={filtered} title={category} />
+    </main>
+    <Footer />
+  </body>
+</BaseLayout>
