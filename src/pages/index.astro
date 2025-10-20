@@ -1,31 +1,31 @@
 ---
-import { Image } from 'astro:assets';
-import BaseHead from '@/BaseHead.astro';
-import Footer from '@/Footer.astro';
-import Header from '@/Header.astro';
-import ageCalcMP4 from '/age-calculator-sm.mp4';
-import ageCalcWebM from '/age-calculator-sm.webm';
-import resumeImage from '../assets/resume.png';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { experiences } from './work-experience/experiences';
+import { Image } from "astro:assets";
+import BaseHead from "@/BaseHead.astro";
+import Footer from "@/Footer.astro";
+import Header from "@/Header.astro";
+import ageCalcMP4 from "/age-calculator-sm.mp4";
+import ageCalcWebM from "/age-calculator-sm.webm";
+import resumeImage from "../assets/resume.png";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { experiences } from "./work-experience/experiences";
 
 const openSourceLinks = [
   {
-    text: 'Open Props CSS Library',
-    url: 'https://github.com/argyleink/open-props/issues?q=author:Brian-Pob',
+    text: "Open Props CSS Library",
+    url: "https://github.com/argyleink/open-props/issues?q=author:Brian-Pob",
   },
   {
-    text: 'MDN Web Docs',
-    url: 'https://github.com/mdn/content/issues?q=author:Brian-Pob',
+    text: "MDN Web Docs",
+    url: "https://github.com/mdn/content/issues?q=author:Brian-Pob",
   },
   {
-    text: 'TailwindCSS issues',
-    url: 'https://github.com/tailwindlabs/tailwindcss/issues?q=Brian-Pob',
+    text: "TailwindCSS issues",
+    url: "https://github.com/tailwindlabs/tailwindcss/issues?q=Brian-Pob",
   },
   {
-    text: 'Solid JS contributions',
-    url: 'https://github.com/solidjs/solid-docs/issues?q=author:Brian-Pob',
+    text: "Solid JS contributions",
+    url: "https://github.com/solidjs/solid-docs/issues?q=author:Brian-Pob",
   },
 ];
 ---

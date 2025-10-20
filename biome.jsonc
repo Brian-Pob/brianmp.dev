@@ -24,9 +24,7 @@
   },
   "overrides": [
     {
-      "includes": [
-        "**/*.astro"
-      ],
+      "includes": ["**/*.astro"],
       "linter": {
         "enabled": false
       }
