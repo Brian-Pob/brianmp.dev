@@ -1,9 +1,9 @@
 ---
-status: 'preview' # draft, preview, published
-title: 'Bites'
+status: 'published' # draft, preview, published
+title: 'Introducing Bites!'
 description: 'Introducing Bites - Short and rough posts about whatever I feel like writing in the moment.'
 pubDate: 'Oct 21 2025'
-heroImage: 'src/assets/blog-placeholder-3.jpg'
+heroImage: 'https://res.cloudinary.com/dvivrw9ml/image/upload/c_scale,h_630,w_1200/co_rgb:FFFFFF,l_text:JetBrainsMono.ttf_125_bold_left:BITES/fl_layer_apply/v1761109447/blank_br2oph.png'
 ---
 
 With this post, I am introducing Bites to my blog. They're just short posts that should roughly fit in a tweet or Bluesky post or two.
