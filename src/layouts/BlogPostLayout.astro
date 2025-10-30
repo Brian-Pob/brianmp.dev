@@ -11,6 +11,8 @@ type Props = CollectionEntry<'blog'>['data'];
 
 const { status, title, description, pubDate, updatedDate, heroImage, extra } =
   Astro.props;
+
+const imageSrc = typeof heroImage === 'string' ? heroImage : heroImage?.src;
 ---
 
 <BaseLayout>
@@ -19,7 +21,7 @@ const { status, title, description, pubDate, updatedDate, heroImage, extra } =
       title={title}
       description={description}
       extra={extra}
-      image={heroImage?.src}
+      imageSrc={imageSrc}
       status={status}
     />
   </head>
@@ -30,7 +32,7 @@ const { status, title, description, pubDate, updatedDate, heroImage, extra } =
       (status === 'preview' || status === 'draft') && (
         // NOTE hardcoded styles here to make it obvious
         <div
-          class='prose'
+          class="prose"
           style={{
             backgroundColor: status === 'draft' ? 'firebrick' : 'darkgreen',
             color: 'white',
@@ -45,21 +47,26 @@ const { status, title, description, pubDate, updatedDate, heroImage, extra } =
         </div>
       )
     }
-    <main id='main-content'>
+    <main id="main-content">
       {
-        heroImage && (
-          <div class='hero-image'>
-            <Image src={heroImage} inferSize alt='' loading='eager' />
-          </div>
-        )
+        heroImage &&
+          (typeof heroImage === 'string' ? (
+            <div class="hero-image">
+              <img src={heroImage} alt="" loading="eager" />
+            </div>
+          ) : (
+            <div class="hero-image">
+              <Image src={heroImage} inferSize alt="" loading="eager" />
+            </div>
+          ))
       }
-      <div class='prose'>
-        <div class='title'>
-          <div class='date'>
+      <div class="prose">
+        <div class="title">
+          <div class="date">
             <FormattedDate date={pubDate} />
             {
               updatedDate && (
-                <div class='last-updated-on'>
+                <div class="last-updated-on">
                   Last updated on <FormattedDate date={updatedDate} />
                 </div>
               )

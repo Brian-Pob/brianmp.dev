@@ -1,16 +1,16 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
-import "../styles/global.css";
-import "../styles/utilities.css";
-import "../styles/resume.css";
-import { ClientRouter } from "astro:transitions";
-import type { OGPropsExtra } from "../types";
+import '../styles/global.css';
+import '../styles/utilities.css';
+import '../styles/resume.css';
+import { ClientRouter } from 'astro:transitions';
+import type { OGPropsExtra } from '../types';
 
 type Props = {
-  status?: "draft" | "preview" | "published";
+  status?: 'draft' | 'preview' | 'published';
   title: string;
-  image?: string;
+  imageSrc?: string;
   description: string;
   contentType?: string;
   customImageSrc?: string;
@@ -23,18 +23,18 @@ let {
   status,
   title,
   description,
-  image,
-  contentType = "website",
+  imageSrc: image,
+  contentType = 'website',
   extra = [],
 } = Astro.props;
 
-image = image ?? "/og-banner-no-tag.png";
+image = image ?? '/og-banner-no-tag.png';
 
 // const isDraft = status === 'preview' ? '[PREVIEW]' : '';
-let isPreview = "";
+let isPreview = '';
 
-if (status !== undefined && status === "preview") {
-  isPreview = "[PREVIEW] ";
+if (status !== undefined && status === 'preview') {
+  isPreview = '[PREVIEW] ';
 }
 
 const siteTitle = `${isPreview}${title}`;
@@ -42,32 +42,32 @@ const siteDescription = `${isPreview}${description}`;
 ---
 
 <!-- Global Metadata -->
-<meta charset='utf-8' />
-<meta name='viewport' content='width=device-width,initial-scale=1' />
-<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-<link rel='icon' href='/favicon.ico' sizes='any' />
-<link rel='apple-touch-icon' href='/apple-touch-icon.png' />
-<meta name='generator' content={Astro.generator} />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<meta name="generator" content={Astro.generator} />
 
 <!-- Astro View Transitions Router -->
 <ClientRouter />
 
 <!-- Font preloads -->
 <link
-  rel='preload'
-  href='/fonts/ShortStack-Regular.ttf'
-  as='font'
-  type='font/ttf'
+  rel="preload"
+  href="/fonts/ShortStack-Regular.ttf"
+  as="font"
+  type="font/ttf"
   crossorigin
 />
 
 <!-- Canonical URL -->
-<link rel='canonical' href={canonicalURL} />
+<link rel="canonical" href={canonicalURL} />
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
-<meta name='title' content={title} />
-<meta name='description' content={description} />
+<meta name="title" content={title} />
+<meta name="description" content={description} />
 
 <!-- Extra OG Tags -->
 {
@@ -85,30 +85,30 @@ const siteDescription = `${isPreview}${description}`;
   // If any OG tag is property article:author, add a link to the author's profile
   extra.some(({ property }) => property === 'article:author') && (
     <>
-      <link rel='author' href='https://github.com/Brian-Pob' />
-      <meta property='article:author' content='https://github.com/Brian-Pob' />
+      <link rel="author" href="https://github.com/Brian-Pob" />
+      <meta property="article:author" content="https://github.com/Brian-Pob" />
     </>
   )
 }
 
 <!-- Open Graph / Facebook -->
-<meta property='og:type' content={contentType} />
-<meta property='og:url' content={Astro.url} />
-<meta property='og:title' content={siteTitle} />
-<meta property='og:description' content={siteDescription} />
-<meta property='og:site_name' content='brianmp.dev' />
-<meta property='og:image' content={new URL(image, Astro.url)} />
+<meta property="og:type" content={contentType} />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={siteTitle} />
+<meta property="og:description" content={siteDescription} />
+<meta property="og:site_name" content="brianmp.dev" />
+<meta property="og:image" content={new URL(image, Astro.url)} />
 
 <!-- Twitter -->
-<meta name='twitter:card' content='summary_large_image' />
-<meta name='twitter:url' content={Astro.url} />
-<meta name='twitter:title' content={siteTitle} />
-<meta name='twitter:description' content={siteDescription} />
-<meta name='twitter:image' content={new URL(image, Astro.url)} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={Astro.url} />
+<meta name="twitter:title" content={siteTitle} />
+<meta name="twitter:description" content={siteDescription} />
+<meta name="twitter:image" content={new URL(image, Astro.url)} />
 
 <!-- CSP -->
 <meta
-  http-equiv='Content-Security-Policy'
+  http-equiv="Content-Security-Policy"
   content="
   default-src 'self' *.brianmp.dev cdn.vercel-insights.com; 
   img-src 'self' *.brianmp.dev media.tenor.com res.cloudinary.com; 
@@ -119,4 +119,3 @@ const siteDescription = `${isPreview}${description}`;
   script-src-elem 'self' *.brianmp.dev *.codepen.io www.youtube.com tenor.com 'unsafe-inline' 'unsafe-eval' va.vercel-scripts.com cdn.vercel-insights.com vercel.live public.codepenassets.com;
 "
 />
-

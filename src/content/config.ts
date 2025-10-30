@@ -19,7 +19,7 @@ const blog = defineCollection({
         .optional()
         .transform((str) => (str ? new Date(str) : undefined)),
       // heroImage: z.string().optional().or(image()),
-      heroImage: image().optional(),
+      heroImage: image().optional().or(z.string().optional()),
       // extra is array of OGPropsExtra
       extra: z.array(z.custom<OGPropsExtra>((val) => val)).optional(),
     }),

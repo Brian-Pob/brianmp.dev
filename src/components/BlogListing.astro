@@ -14,7 +14,7 @@ interface Props {
 
 const { posts = [], title = undefined } = Astro.props as Props;
 const sortedPosts = posts.sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
@@ -26,17 +26,21 @@ const sortedPosts = posts.sort(
         <li>
           <a href={`/blog/${post.slug}/`}>
             {post.data.heroImage ? (
-              <Image src={post.data.heroImage} inferSize alt='' />
+              typeof post.data.heroImage === 'string' ? (
+                <img src={post.data.heroImage} alt="" />
+              ) : (
+                <Image src={post.data.heroImage} inferSize alt="" />
+              )
             ) : (
               <Image
                 width={720}
                 height={360}
-                src='/blog-placeholder-3.jpg'
-                alt=''
+                src="/blog-placeholder-3.jpg"
+                alt=""
               />
             )}
-            <h4 class='title'>{post.data.title}</h4>
-            <p class='date'>
+            <h4 class="title">{post.data.title}</h4>
+            <p class="date">
               <FormattedDate date={post.data.pubDate} />
             </p>
           </a>
