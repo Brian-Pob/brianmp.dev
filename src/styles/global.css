@@ -53,7 +53,8 @@
   /* neutral palette using OKLCH for perceptual correctness */
   --black: oklch(6% 0 0);
   --gray: oklch(55% 0 0);
-  --gray-light: oklch(95% 0 0);
+  --gray-lighter: oklch(0.935 0.0041 91.45);
+  --gray-light: oklch(0.85 0.0041 91.45);
   --gray-dark: oklch(20% 0 0);
   /* alpha variants for shadows & overlays */
   --gray-25: oklch(55% 0 0 / 0.25);
@@ -61,14 +62,14 @@
   --gray-light-50: oklch(95% 0 0 / 0.5);
   --gray-gradient: var(--gray-light-50), #fff;
   --box-shadow:
-    0 2px 6px var(--gray-25), 0 8px 24px var(--gray-33), 0 16px 32px
-    var(--gray-33);
+    0 2px 6px var(--gray-25), 0 8px 24px var(--gray-33),
+    0 16px 32px var(--gray-33);
   --box-shadow-md: 0 2px 6px var(--gray-25), 0 8px 24px var(--gray-33);
   --box-shadow-sm: 0 2px 6px var(--gray-25);
   --font-size-base: var(--size-4);
 
   /* light styles by default */
-  --surface: white;
+  --surface: var(--gray-lighter);
   --surface-secondary: var(--gray-light);
   --text-primary: var(--gray-dark);
   --text-secondary: var(--black);
@@ -97,7 +98,7 @@ body {
   :root {
     --surface: #1a1a1a;
     --surface-secondary: #2a2a2a;
-    --text-primary: var(--gray-light);
+    --text-primary: var(--gray-lighter);
     --text-secondary: var(--gray-light);
     --accent: var(--accent-light);
     color-scheme: dark;
@@ -149,7 +150,10 @@ h2 {
   font-size: var(--font-size-fluid-2);
 }
 
-h3,
+h3 {
+  font-size: calc(var(--font-size-fluid-2) - 0.35rem);
+}
+
 h4,
 h5,
 h6 {
