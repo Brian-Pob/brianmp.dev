@@ -25,7 +25,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           I am a software engineer with a background in Web Development and User
           Experience. I build beautiful and usable user-interfaces that increase
           conversion rates while adhering to accessibility standards for ADA
-          Compliance. Currently working with React and TypeScript.
+          Compliance.
+        </p>
+        <p>
+          My professional work uses React, TypeScript, Cypress, Jest, AWS, and
+          numerous Amazon internal tools. For personal projects, I have recently
+          been using Astro, SolidJS, Bun, and Vercel.
         </p>
         <a href="/BrianPoblete_resume.pdf" download>
           <Image
@@ -39,17 +44,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <p>Click to download resume</p>
         </a>
       </section>
-
       <section>
         <h2 id="skills">Skills</h2>
         <ul>
           <li>
-            <strong>Languages:</strong> HTML, CSS, JavaScript, TypeScript, SASS/SCSS,
-            PHP
+            <strong>Languages:</strong> HTML, CSS, JavaScript, TypeScript, SASS/SCSS
           </li>
           <li>
             <strong>Frameworks &amp; Libraries:</strong> React, NodeJS, SolidJS,
-            Astro, Open Props, Tailwind
+            Astro, Open Props, Tailwind, Vite, Bun
+          </li>
+          <li>
+            <strong>Testing:</strong> Jest, Cypress, Bun test runner
           </li>
           <li>
             <strong>Design Skills:</strong> Web Design, UX Design, Web Accessibility,
@@ -59,7 +65,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <strong>Backend:</strong> Python, Flask, C, C++, Java, MongoDB, SQL
           </li>
           <li>
-            <strong>Developer Tools:</strong> Git, CI/CD, Docker, WordPress, Drupal
+            <strong>Developer Tools:</strong> Git, GitHub CI/CD, Docker
           </li>
         </ul>
       </section>
@@ -80,12 +86,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <p><em>May 2024 &mdash; Present</em></p>
         <ul>
           <li>
-            Development of data visualization tools for mass spectrometry data.
+            Developed state-of-the-art data visualization tools for mass spectrometry data.
           </li>
           <li>
-            Collaborating with scientists and engineers to create a
-            user-friendly interface for data analysis to significantly improve
-            the efficiency of the research process.
+           Implemented custom, open-source Python libraries into a PyQt-based,
+           cross-platform (macOS and Windows) desktop application.
+          </li>
+          <li>
+            Collaborated with scientists and engineers to create a user-friendly
+            interface for data analysis to exponentially increase
+            efficiency of mass-spectrometry research.
           </li>
         </ul>
 
@@ -268,7 +278,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin: 0 auto;
     border: 5px solid;
     border-radius: 3px;
-    border-color: hsl(151deg 79% 73%);
+    border-color: var(--accent);
   }
 
   .hero-img {

@@ -47,14 +47,14 @@
 }
 
 :root {
-  --accent: oklch(46.38% 0.1137 155.41);
   --accent-main: oklch(46.38% 0.1137 155.41);
   --accent-light: oklch(70.3% 0.1724 155.41);
+  --accent: var(--accent-main);
   /* neutral palette using OKLCH for perceptual correctness */
   --black: oklch(6% 0 0);
   --gray: oklch(55% 0 0);
-  --gray-lighter: oklch(0.935 0.0041 91.45);
-  --gray-light: oklch(0.85 0.0041 91.45);
+  --gray-lighter: oklch(0.95 0.0041 91.45);
+  --gray-light: oklch(0.9 0.0041 91.45);
   --gray-dark: oklch(20% 0 0);
   /* alpha variants for shadows & overlays */
   --gray-25: oklch(55% 0 0 / 0.25);
@@ -106,7 +106,7 @@ body {
 }
 
 [data-theme="light"] {
-  --surface: white;
+  --surface: var(--gray-lighter);
   --surface-secondary: var(--gray-light);
   --text-primary: var(--gray-dark);
   --text-secondary: var(--black);
@@ -117,7 +117,7 @@ body {
 [data-theme="dark"] {
   --surface: #1a1a1a;
   --surface-secondary: #2a2a2a;
-  --text-primary: var(--gray-light);
+  --text-primary: var(--gray-lighter);
   --text-secondary: var(--gray-light);
   --accent: var(--accent-light);
   color-scheme: dark;
@@ -138,7 +138,6 @@ h5,
 h6 {
   font-family: "Space Grotesk", sans-serif;
   margin: 0 0 var(--size-2) 0;
-  color: var(--text-secondary);
   line-height: 1.2;
 }
 
