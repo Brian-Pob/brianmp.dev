@@ -47,20 +47,21 @@
 }
 
 :root {
-  --accent-main: oklch(46.38% 0.1137 155.41);
-  --accent-light: oklch(70.3% 0.1724 155.41);
+  --accent-main: oklch(0.4638 0.1137 155.41);
+  --accent-light: oklch(.703 0.1724 155.41);
   --accent: var(--accent-main);
   /* neutral palette using OKLCH for perceptual correctness */
-  --black: oklch(6% 0 0);
-  --gray: oklch(55% 0 0);
+  --black: oklch(0.06 0 0);
+  --gray: oklch(0.55 0 0);
   --gray-lighter: oklch(0.95 0.0041 91.45);
   --gray-light: oklch(0.9 0.0041 91.45);
-  --gray-dark: oklch(20% 0 0);
+  --gray-dark: oklch(0.2 0 0);
+  --gray-darkish: oklch(0.289 0 0);
   /* alpha variants for shadows & overlays */
-  --gray-25: oklch(55% 0 0 / 0.25);
-  --gray-33: oklch(55% 0 0 / 0.33);
-  --gray-light-50: oklch(95% 0 0 / 0.5);
-  --gray-gradient: var(--gray-light-50), #fff;
+  --gray-25: oklch(0.55 0 0 / 0.25);
+  --gray-33: oklch(0.55 0 0 / 0.33);
+  --gray-light-50: oklch(0.95 0 0 / 0.5);
+  --gray-gradient: var(--gray-light-50), oklch(1 0 0);
   --box-shadow:
     0 2px 6px var(--gray-25), 0 8px 24px var(--gray-33),
     0 16px 32px var(--gray-33);
@@ -96,8 +97,8 @@ body {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --surface: #1a1a1a;
-    --surface-secondary: #2a2a2a;
+    --surface: var(--gray-dark);
+    --surface-secondary: var(--gray-darkish);
     --text-primary: var(--gray-lighter);
     --text-secondary: var(--gray-light);
     --accent: var(--accent-light);
@@ -115,8 +116,8 @@ body {
 }
 
 [data-theme="dark"] {
-  --surface: #1a1a1a;
-  --surface-secondary: #2a2a2a;
+  --surface: var(--gray-dark);
+  --surface-secondary: var(--gray-darkish);
   --text-primary: var(--gray-lighter);
   --text-secondary: var(--gray-light);
   --accent: var(--accent-light);
